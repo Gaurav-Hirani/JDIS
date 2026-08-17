@@ -1,88 +1,77 @@
-# JDIS Adjournment Feasibility Assessment
+# JDIS Methodological Note & Scope Assessment: Hearing Continuation & Next-Listing Delay
 
 **Project**: Judicial Delay Intelligence System (JDIS)  
 **Role**: Tanmay — Data Engineer & Data Architect  
-**Date**: August 2026  
-**Document Classification**: Scientific Feasibility & Scope Determination  
-**Target Feasibility Status**: **PARTIALLY FEASIBLE (Proxy Required)**
+**Status**: Approved by Human Review — Research Reframing Adopted  
+**Operational Target**: **Hearing Continuation & Next-Listing Delay Prediction**
 
 ---
 
-## 1. Objective of Investigation
+## 1. Executive Summary & Approved Research Reframing
 
-The JDIS research plan and execution manual define an intended predictive component for *adjournment prediction / next-hearing risk*. 
+Following the formal human review of the Dataset Audit, the proposed "Adjournment Prediction" module has been **officially reframed and renamed** across all JDIS codebases, research papers, and API specifications to:
 
-As mandated by **Rule 5 of the Data Engineer Master Instructions**, we conducted an exhaustive schema and record-level inspection across all raw archives (`cases.tar.gz`, `keys.tar.gz`, `judges_clean.tar.gz`, `acts_sections.tar.gz`) to determine whether:
-1. An explicit, ground-truth adjournment status exists for individual hearing events.
-2. A scientifically valid and defensible proxy can be constructed.
-3. The module must be scoped and renamed to prevent scientific misrepresentation.
+**"Hearing Continuation & Next-Listing Delay Prediction"**
 
----
-
-## 2. Empirical Findings from Raw Dataset
-
-### 2.1 Absence of Granular Hearing-by-Hearing Logs
-- The Development Data Lab (DDL) public e-Courts release does **not** include a per-hearing transaction table (e.g., individual hearing date logs with per-session outcome codes).
-- The raw dataset stores case-level aggregate milestones on each case record in `cases_YYYY.csv`:
-  - `date_of_filing`: Initial filing date (100% present).
-  - `date_first_list`: First hearing listing date (99.64% present).
-  - `date_last_list`: Last hearing listing date (99.52% present).
-  - `date_next_list`: Next scheduled listing date (99.52% present).
-  - `purpose_name`: Single integer code mapping to the primary/current hearing stage purpose in `purpose_name_key.csv`.
-
-### 2.2 Absence of Explicit Binary Adjournment Column
-- There is **no explicit binary column** such as `is_adjourned (0/1)` or `adjournment_granted (True/False)` in the case records.
-- In `purpose_name_key.csv`, out of 80,935,944 historical hearing purpose instances, specific adjournment-related purpose codes exist in only 153,146 records (0.19%):
-  - `"adjourned"`: 151,013 instances
-  - `"adjourned-191"`: 1,174 instances
-  - `"no sitting case adjourned to"`: 230 instances
-  - `"call on / stayed / awaiting notice / awaiting warrant"`: 8,472,130 instances (10.47%)
-
-### 2.3 Scientific Risk of Fabricating Labels
-- In standard Indian District Court procedure under the Civil Procedure Code (CPC Order XVII) and Criminal Procedure Code (CrPC), a case proceeds through multiple substantive hearings (e.g., *Summons → Framing of Charge → Evidence / Cross-Examination → Arguments → Judgement*).
-- **The mere occurrence of multiple listings or hearing dates does NOT constitute an adjournment.**
-- Manufacturing a synthetic binary `adjourned = 1` whenever `date_last_list != date_first_list` would be scientifically fraudulent and violate IEEE peer-review standards.
+This change ensures scientific honesty and strict adherence to IEEE peer-review standards, as the DDL e-Courts dataset does not contain explicit, granular hearing-by-hearing adjournment orders.
 
 ---
 
-## 3. Formal Feasibility Classification
+## 2. Critical Methodological Distinctions
 
-### Verdict: **PARTIALLY FEASIBLE**
+To prevent conceptual confusion, the JDIS data architecture enforces explicit legal and statistical definitions:
 
-Direct session-level adjournment classification is **not feasible** on the static DDL snapshot without granular proceeding-level logs. However, **Case-Level Hearing Continuation Risk** and **Hearing-Gap Escalation** can be rigorously and defensibly formulated.
+```mermaid
+graph TD
+    A[Court Proceeding Reality] --> B[Adjournment]
+    A --> C[Hearing Continuation]
+    A --> D[Next-Listing Delay]
+
+    B["1. Adjournment (Formal Legal Act)
+    Postponement of an active hearing session
+    without substantive progress (Order XVII CPC / CrPC).
+    Requires explicit judicial order log (Absent in DDL)."]
+    
+    C["2. Hearing Continuation (Procedural Lifecycle)
+    The normal progression of a trial across multiple
+    substantive stages (Summons → Evidence → Arguments).
+    Represented by hearing_span_days."]
+    
+    D["3. Next-Listing Delay (Scheduling Latency)
+    The temporal interval between successive hearings
+    (date_next_list - date_last_list).
+    Captures court backlog and scheduling friction."]
+```
+
+1. **Adjournment (Formal Judicial Postponement)**:
+   - *Definition*: A formal judicial order deferring a scheduled proceeding to a future date, often due to absent counsel, pending witness summons, or procedural unreadiness.
+   - *Data Constraint*: The DDL public dataset aggregates case milestones and **does not provide session-by-session proceeding logs**. Claiming to predict "adjournments" would be scientifically invalid.
+2. **Hearing Continuation (Trial Stage Progression)**:
+   - *Definition*: In Indian lower courts, multiple hearings are a mandatory feature of trial procedure. Cases naturally continue across multiple dates to record evidence and hear arguments.
+   - *Metric*: $\text{hearing\_span\_days} = \text{date\_last\_list} - \text{date\_first\_list}$ (Median: 356.0 days).
+3. **Next-Listing Delay (Scheduling Latency)**:
+   - *Definition*: The actual calendar gap between the most recent court appearance and the next scheduled appearance date.
+   - *Metric*: $\text{next\_listing\_gap\_days} = \text{date\_next\_list} - \text{date\_last\_list}$.
 
 ---
 
-## 4. Scientifically Defensible Proxy Formulation
+## 3. Approved Prediction Target & Prediction Point Protocol
 
-In alignment with **Section 4.4 and Section 14 of the IEEE Execution Manual**, we formulate two defensible, leakage-safe hearing delay metrics:
+### 3.1 Prediction Point Definition
+The Next-Listing Delay model operates at a specific observation point during the case lifecycle:
+- **Prediction Point**: The date of the current/last hearing ($\text{date\_last\_list}$).
+- **Target Variable**: $\text{next\_listing\_gap\_days} = \text{date\_next\_list} - \text{date\_last\_list}$.
+- **Binary Continuation Risk**: $\mathbb{I}(\text{hearing\_span\_days} > 365.25\text{ days})$.
 
-### Proxy 1: Hearing Span Index (`hearing_span_days`)
-The total temporal footprint of court hearings observed for the case:
-$$\text{hearing\_span\_days} = \text{date\_last\_list} - \text{date\_first\_list}$$
-- **Sample Median**: 356.0 days (~11.7 months)
-- **Sample Mean**: 583.0 days (~19.2 months)
-
-### Proxy 2: Next-Listing Gap / Scheduling Latency (`next_listing_gap_days`)
-The interval between the last hearing and the subsequent scheduled date:
-$$\text{next\_listing\_gap\_days} = \text{date\_next\_list} - \text{date\_last\_list}$$
-- Reflects court congestion, administrative backlog, and procedural delay between successive listings.
-
-### Proxy 3: Hearing Delay Risk Classification (`hearing_delay_risk`)
-A binary risk indicator defined for active/in-progress cases:
-$$\text{hearing\_delay\_risk} = \begin{cases} 1 & \text{if } \text{hearing\_span\_days} > 365.25 \text{ days} \\ 0 & \text{otherwise} \end{cases}$$
-- For in-progress cases, this models whether the hearing process has extended past 1 calendar year without resolution.
+### 3.2 Strict Leakage Prohibition
+- When predicting $\text{next\_listing\_gap\_days}$, the future date $\text{date\_next\_list}$ is the target and **MUST NEVER be used as an input feature**.
+- Input features are restricted strictly to facts known as of $\text{date\_last\_list}$ (e.g. days elapsed since filing, court congestion, purpose of the current hearing stage).
 
 ---
 
-## 5. Required Actions & Stop Condition
+## 4. Implementation in JDIS Codebase
 
-> [!IMPORTANT]
-> **Action Required for Gaurav (AI/ML Lead) and Shukla (Frontend Lead):**
-> 1. In all research papers, model architectures, and API endpoints, the module must be designated as:
->    - **"Hearing Delay Risk & Continuation Predictor"** (NOT "Individual Session Adjournment Classifier").
-> 2. The API route should be documented as:
->    - `POST /api/predict/hearing-risk` or `POST /api/predict/delay-risk`.
-> 3. The IEEE research paper Section III (Methodology) will explicitly document this operational definition and reference DDL data structure constraints.
-
-**Human Team Approval**: This feasibility report is submitted for user review before pipeline execution.
+1. **Feature Dataset**: Stored in `data/features/hearing_features.parquet` (Dataset C).
+2. **API Endpoint**: `POST /api/predict/hearing-delay` (Backend: Namdeo).
+3. **UI Display**: "Estimated Days to Next Listing & Trial Continuation Risk" (Frontend: Shukla).
+4. **IEEE Paper Section**: Documented under *"Section III.B: Hearing Continuation and Next-Listing Latency Modeling"*.

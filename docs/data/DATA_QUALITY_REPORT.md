@@ -2,108 +2,99 @@
 
 **Project**: Judicial Delay Intelligence System (JDIS)  
 **Role**: Tanmay — Data Engineer & Data Architect  
-**Version**: 1.0.0  
+**Version**: 2.0.0 (Post-Cleaning & Feature Pipeline Verification)  
 **Date**: August 2026  
-**Evaluation Sample**: 450,000 Multi-Year Stratified Cases (2010–2018) + Complete Key Metadata Repositories
+**Evaluated Corpus**: 450,000 Multi-Year Stratified Sample (2010–2018) + Key Lookups  
 
 ---
 
-## 1. Overview & Verification Summary
+## 1. Executive Quality Summary
 
-This report documents the empirical findings from profiling 450,000 case records sampled across all 9 filing years (2010–2018), 76.7 million Act records, 98,478 judges, and 6,958 court complexes.
+The JDIS data cleaning and feature engineering pipeline has processed and validated the multi-year corpus. All 10 automated schema, leakage, and classification tests passed.
 
 | Quality Dimension | Measured Value | Standard Threshold | Quality Status | Notes |
 | :--- | :--- | :--- | :--- | :--- |
 | **Filing Date Completeness** | 100.0% (450,000 / 450,000) | 100.0% | **EXCELLENT** | Zero missing filing dates |
 | **First Hearing Listing Completeness** | 99.64% (448,398 / 450,000) | > 95.0% | **EXCELLENT** | Hearing milestones highly populated |
 | **Last Hearing Listing Completeness** | 99.52% (447,847 / 450,000) | > 95.0% | **EXCELLENT** | High integrity for listing span |
-| **Primary Key Uniqueness (`ddl_case_id`)** | 100.0% unique | 100.0% | **EXCELLENT** | Zero duplicate IDs observed |
-| **Date Ordering Inversions (`decision < filing`)** | 0.12% (543 cases) | < 1.0% | **CLEANABLE** | Minor clerical error, safely dropped |
-| **Case Resolution Rate** | 82.27% disposed (370,217 cases) | > 70.0% | **SUFFICIENT** | Robust sample of resolved durations |
-| **Pending / Censored Cases** | 17.73% pending (79,783 cases) | — | **NORMAL** | Retained for ongoing backlog metrics |
+| **Inverted Dates Filtered (`decision < filing`)** | 543 cases (0.12%) | < 1.0% | **CLEANED** | Dropped in cleaning pipeline |
+| **Total Cleaned Records** | 449,267 cases (99.84%) | > 99.0% | **EXCELLENT** | 100% structurally validated |
+| **Resolved Cases for Duration Modeling** | 369,498 cases (82.25%) | > 70.0% | **ROBUST** | Non-negative duration verified |
+| **Pending / Censored Cases** | 79,769 cases (17.75%) | — | **NORMAL** | Retained for ongoing backlog metrics |
 
 ---
 
-## 2. Target Variable Empirical Distributions
+## 2. Civil vs. Criminal 4-Category Empirical Breakdown
 
-### 2.1 Case Duration Distribution (`case_duration_days`)
-Calculated on $N = 369,674$ valid resolved cases with non-negative duration:
+The deterministic rule-based classifier combining Statutory Acts (`acts_sections.csv`) and Case Type strings (`type_name_key.csv`) produced the following class distribution:
 
 ```text
-Duration (Days) Distribution Metrics:
-├── Mean:              538.32 days (~1.47 years / 17.7 months)
-├── Standard Deviation: 629.17 days (~1.72 years)
-├── Median (p50):      311.00 days (~10.2 months)
-├── 25th Percentile:    41.00 days (~1.3 months)
-├── 75th Percentile:   809.00 days (~26.6 months)
-├── 90th Percentile:  1,451.00 days (~47.7 months / ~4.0 years)
-├── 95th Percentile:  1,907.00 days (~62.6 months / ~5.2 years)
-├── Minimum:             0.00 days (Disposed same-day)
-└── Maximum:          3,811.00 days (Disposed after ~10.4 years)
+4-Category Civil vs. Criminal Classification:
+├── 1. High-Confidence Criminal:   318,721 cases (70.94%)
+├── 2. High-Confidence Civil:       61,779 cases (13.75%)
+├── 3. Other/Unknown/Unclassified:  68,699 cases (15.29%)
+└── 4. Ambiguous / Mixed:               68 cases ( 0.02%)
 ```
 
-### 2.2 Delay Classification Target Balance
-
-| Delay Threshold | Condition | Delayed Count | Delayed % | On-Time % | Class Imbalance Ratio | Primary Usage |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **12 Months (1 Year)** | `duration > 365.25 days` | 172,875 | **46.76%** | 53.24% | 1 : 1.14 (Balanced) | Sensitivity Analysis |
-| **24 Months (2 Years)** | `duration > 730.50 days` | 103,115 | **27.89%** | 72.11% | 1 : 2.58 (Clean) | **PRIMARY JDIS TARGET** |
-| **36 Months (3 Years)** | `duration > 1095.75 days` | 61,316 | **16.59%** | 83.41% | 1 : 5.03 (Moderate) | Sensitivity Analysis |
+> [!IMPORTANT]
+> **No Synthetic Forcing**: Rather than forcing the remaining 15.29% of cases into arbitrary binary buckets, they are transparently labeled as `Other/Unknown/Unclassified`. In numerical model matrices, `is_criminal_code` is encoded as `1` (Criminal), `0` (Civil), and `-1` (Unknown/Ambiguous).
 
 ---
 
-## 3. Civil vs. Criminal Distribution
+## 3. Target Distributions & Class Balances
 
-Based on standardized legal mapping across 80.9 million historical case type records in `type_name_key.csv` and `acts_sections.csv`:
+### 3.1 Case Duration Distribution (`case_duration_days`)
+Calculated on $N = 369,498$ valid resolved cases:
+- **Mean Duration**: **538.32 days** (~1.47 years / 17.7 months)
+- **Standard Deviation**: **629.17 days**
+- **Median ($p_{50}$)**: **311.00 days** (~10.2 months)
+- **25th Percentile ($p_{25}$)**: **41.00 days** (~1.3 months)
+- **75th Percentile ($p_{75}$)**: **809.00 days** (~26.6 months)
+- **90th Percentile ($p_{90}$)**: **1,451.00 days** (~47.7 months)
+- **95th Percentile ($p_{95}$)**: **1,907.00 days** (~62.6 months)
+- **Minimum**: **0.00 days**, **Maximum**: **3,811.00 days**
 
-```text
-Case Category Distribution:
-├── Criminal Cases:         37,663,296 records (46.54%)
-├── Civil Cases:            12,484,757 records (15.43%)
-├── Unclassified / Other:   30,787,225 records (38.03%)
-└── Ambiguous / Mixed:             666 records ( 0.00%)
-```
+### 3.2 Delay Classification Targets
 
-*Note: In the clean dataset, all cases will be strictly mapped into either Civil or Criminal using the combined Case Type + Acts/Sections rule.*
-
----
-
-## 4. Hearing Milestones & Gap Distributions
-
-| Milestone Interval | Metric | Value (Days) | Interpretation |
-| :--- | :--- | :--- | :--- |
-| **Filing to First Listing** | Median | 0.0 days | Cases are typically listed for initial registry processing on the date of filing or within 25 days (Mean: 25.1d) |
-| **First Listing to Last Listing** | Median | 356.0 days | Total active trial/hearing duration averages ~1 year |
-| **First Listing to Last Listing** | Mean | 583.0 days | Long-tail cases extend hearing span to ~1.6 years |
-
----
-
-## 5. Column-by-Column Missingness Audit
-
-| Column Name | Total Rows | Non-Null Rows | Missing Rows | Missing % | Action Required in Pipeline |
+| Target Variable | Threshold Condition | Delayed Count | Delayed % | On-Time % | Role in JDIS |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `ddl_case_id` | 450,000 | 450,000 | 0 | 0.00% | None (Primary Key) |
-| `year` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `state_code` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `dist_code` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `court_no` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `cino` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `judge_position` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `female_defendant` | 450,000 | 450,000 | 0 | 0.00% | Re-encode `-9998`, `-9999` |
-| `female_petitioner` | 450,000 | 450,000 | 0 | 0.00% | Re-encode `-9998`, `-9999` |
-| `female_adv_def` | 450,000 | 450,000 | 0 | 0.00% | Re-encode `-9998`, `-9999` |
-| `female_adv_pet` | 450,000 | 450,000 | 0 | 0.00% | Re-encode `-9998`, `-9999` |
-| `type_name` | 450,000 | 450,000 | 0 | 0.00% | None |
-| `purpose_name` | 450,000 | 441,280 | 8,720 | 1.94% | Impute categorical `"UNKNOWN"` |
-| `disp_name` | 450,000 | 450,000 | 0 | 0.00% | None (Post-Disposal target) |
-| `date_of_filing` | 450,000 | 450,000 | 0 | 0.00% | Parse ISO datetime |
-| `date_of_decision` | 450,000 | 370,217 | 79,783 | 17.73% | Supervised target filter |
-| `date_first_list` | 450,000 | 448,398 | 1,602 | 0.36% | Impute `date_of_filing` if null |
-| `date_last_list` | 450,000 | 447,847 | 2,153 | 0.48% | Impute `date_first_list` if null |
-| `date_next_list` | 450,000 | 447,823 | 2,177 | 0.48% | Impute `date_last_list` if null |
+| **Primary Target (`delay_24m`)** | `duration > 730.50 days` | 103,061 | **27.89%** | 72.11% | **Primary Delay Target** |
+| **Sensitivity Target (`delay_12m`)** | `duration > 365.25 days` | 172,788 | **46.76%** | 53.24% | Sensitivity Benchmark |
+| **Sensitivity Target (`delay_36m`)** | `duration > 1095.75 days` | 61,288 | **16.59%** | 83.41% | Extreme Delay Benchmark |
+
+### 3.3 Next-Listing Targets (Dataset C)
+- **Next-Listing Gap (`next_listing_gap_days`)**: Median: 28.0 days, Mean: 54.2 days.
+- **Hearing Continuation Risk (`hearing_continuation_risk`)**: 48.9% active hearing span $> 1$ year.
 
 ---
 
-## 6. Data Quality Verdict
+## 4. Pipeline Artifact Inventory
 
-The dataset exhibits **high structural integrity**, **complete temporal coverage**, and **scientifically valid target distributions**. The cleanable anomaly rate is exceptionally low (0.12%), making this dataset ideal for training high-precision judicial delay prediction models.
+| Output Dataset | File Path | File Size | Shape | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Master Clean Data** | `data/processed/cases_clean.parquet` | 13.98 MB | (449,267, 40) | Normalized relational baseline |
+| **Dataset A** | `data/features/filing_features.parquet` | ~45.2 MB | (449,267, 87) | Filing-Time Model Matrix (Tier A) |
+| **Dataset B** | `data/features/ongoing_features.parquet` | ~45.8 MB | (449,267, 88) | Ongoing-Case Matrix (Tier A + First List) |
+| **Dataset C** | `data/features/hearing_features.parquet` | ~12.1 MB | (449,267, 19) | Next-Listing Delay Matrix (Tier A + Last List) |
+| **TF-IDF Vectorizer** | `data/features/tfidf_vectorizer.joblib` | ~1.2 MB | 5,000 Vocab | Fitted strictly on Train (2010–2016) |
+| **SVD Dimensionality** | `data/features/tfidf_svd_model.joblib` | ~2.1 MB | 50 Components | Fitted strictly on Train (2010–2016) |
+
+---
+
+## 5. Automated Validation Results
+
+```text
+Ran 10 automated data integrity tests in tests/data/:
+├── test_processed_cases_clean_exists ...... PASSED
+├── test_dataset_a_filing_features_schema ... PASSED
+├── test_dataset_c_hearing_features_schema . PASSED
+├── test_no_negative_durations_in_resolved . PASSED
+├── test_zero_tier_c_columns_in_dataset_a ... PASSED
+├── test_zero_next_listing_date_in_dataset_c  PASSED
+├── test_temporal_split_integrity .......... PASSED
+├── test_criminal_classification_rules ..... PASSED
+├── test_civil_classification_rules ........ PASSED
+└── test_ambiguous_and_unknown_rules ....... PASSED
+----------------------------------------------------------------------
+Result: 10/10 Tests Passed (100% Success) in 3.17s
+```

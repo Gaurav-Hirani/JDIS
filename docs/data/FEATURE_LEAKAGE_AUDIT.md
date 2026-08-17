@@ -1,106 +1,129 @@
-# JDIS Feature Leakage Audit & Time-Safety Protocol
+# JDIS Feature Leakage Audit & 3-Tier Time-Safety Classification
 
 **Project**: Judicial Delay Intelligence System (JDIS)  
 **Role**: Tanmay — Data Engineer & Data Architect  
+**Version**: 2.0.0 (Approved Post-Review Specification)  
 **Date**: August 2026  
-**Document Classification**: Scientific Data Integrity & Research Validity Standard  
-**Integrity Rule**: Zero Tolerance for Temporal Contamination or Post-Disposal Feature Leakage
 
 ---
 
-## 1. Executive Mandate
+## 1. Executive Summary & 3-Tier Classification Protocol
 
-A predictive AI model for judicial delay is scientifically invalid if it incorporates information that was not available at the exact moment a prediction is made. 
+To guarantee zero look-ahead bias and ensure absolute scientific validity for the IEEE research paper, all features across the JDIS platform are strictly partitioned into three temporal tiers according to their prediction point availability.
 
-In judicial data systems, data leakage frequently occurs via:
-1. **Target-Derived Variables**: Using final case outcome or post-decision events as input features.
-2. **Future Milestones**: Using subsequent hearing dates or decision timestamps to predict early-stage duration.
-3. **Global Historical Aggregates**: Computing judge/court average delay across the *entire* 2010–2018 dataset and applying those averages to cases filed in 2010.
+```mermaid
+graph TD
+    subgraph TierA["Tier A: Available at Filing (Filing Model)"]
+        A1[Geographic & Court IDs]
+        A2[Calendar Features]
+        A3[Filing Judge & Bench]
+        A4[Case Type & Statutory Acts]
+        A5[Filing Demographics]
+        A6[Time-Safe Historical Metrics]
+        A7[TF-IDF Legal Metadata SVD]
+    end
 
-This audit establishes a strict 3-tier feature classification system and defines the mathematical time-windowing rules required for all engineered features.
+    subgraph TierB["Tier B: Available In-Progress (Ongoing/Hearing Models)"]
+        B1[First Listing Date / Gap]
+        B2[Current Hearing Stage / Purpose]
+        B3[Hearing Span Days to Date]
+        B4[Days Elapsed Since Filing]
+    end
 
----
+    subgraph TierC["Tier C: Post-Disposal / Ground Truth (PROHIBITED AS INPUTS)"]
+        C1[Decision Date]
+        C2[Final Disposition Outcome]
+        C3[Decision Judge ID]
+        C4[Next Listing Date when predicting gap]
+        C5[Case Duration Days Target]
+        C6[Delay Classification Targets]
+    end
 
-## 2. Comprehensive Column-Level Leakage Audit
-
-### Tier 1: Safe at Filing Stage (Filing-Time Model)
-These features are known and recorded at the moment a case is filed and registered in the court registry. They may be used in all models.
-
-| Field / Feature Name | Source Table | Justification | Permitted in Filing Model? |
-| :--- | :--- | :--- | :--- |
-| `state_code` / `state_name` | `cases_YYYY.csv` / `cases_state_key.csv` | Geographic jurisdiction fixed at filing | **YES** |
-| `dist_code` / `district_name` | `cases_YYYY.csv` / `cases_district_key.csv` | District registry fixed at filing | **YES** |
-| `court_no` / `court_name` | `cases_YYYY.csv` / `cases_court_key.csv` | Assigned courtroom/complex at filing | **YES** |
-| `filing_year` / `filing_month` / `filing_day_of_week` | `date_of_filing` | Extracted strictly from `date_of_filing` | **YES** |
-| `judge_position` | `cases_YYYY.csv` | Presiding bench position at filing | **YES** |
-| `ddl_filing_judge_id` | `judge_case_merge_key.csv` | Judge assigned at case registration | **YES** |
-| `case_type_code` / `case_type_string` | `type_name` / `type_name_key.csv` | Initial case category assigned at filing | **YES** |
-| `is_criminal` | `acts_sections.csv` / `type_name_key.csv` | Primary case classification at registration | **YES** |
-| `act_codes` / `act_titles` | `acts_sections.csv` / `act_key.csv` | Statutory Acts charged at filing | **YES** |
-| `section_codes` / `section_tokens` | `acts_sections.csv` / `section_key.csv` | Statutory Sections listed in FIR / Plaint | **YES** |
-| `statutory_act_count` | Aggregated from `acts_sections.csv` | Number of distinct legal Acts cited | **YES** |
-| `ipc_section_count` | Aggregated from `acts_sections.csv` | Number of IPC sections charged | **YES** |
-| `bailable_ipc` | `acts_sections.csv` | Legal bail classification at filing | **YES** |
-| `female_defendant` | `cases_YYYY.csv` | Demographic party indicator at filing | **YES** |
-| `female_petitioner` | `cases_YYYY.csv` | Demographic party indicator at filing | **YES** |
-| `female_adv_def` | `cases_YYYY.csv` | Defense counsel gender flag at filing | **YES** |
-| `female_adv_pet` | `cases_YYYY.csv` | Petitioner counsel gender flag at filing | **YES** |
-| `judge_gender` | `judges_clean.csv` | Gender of filing judge | **YES** |
-| `judge_prior_tenure_days` | Computed chronologically | Tenure prior to `date_of_filing` | **YES (Time-Safe)** |
-| `court_prior_backlog_count` | Computed chronologically | Active cases in court as-of `date_of_filing` | **YES (Time-Safe)** |
-| `court_prior_delay_rate` | Computed chronologically | Rate among cases resolved before `date_of_filing` | **YES (Time-Safe)** |
-| `tfidf_legal_tokens` | Vectorized text from filing fields | Fit strictly on training split | **YES (Time-Safe)** |
+    TierA --> DA["Dataset A: filing_features.parquet"]
+    TierA --> DB["Dataset B: ongoing_features.parquet"]
+    TierB --> DB
+    TierA --> DC["Dataset C: hearing_features.parquet"]
+    TierB --> DC
+```
 
 ---
 
-### Tier 2: In-Progress / Hearing Stage Features (Hearing Model Only)
-These features become available only after the case has undergone one or more preliminary hearings. **They MUST NOT be used in the initial Filing-Time Model.**
+## 2. Comprehensive 3-Tier Feature Classification
 
-| Field / Feature Name | Source Table | Stage Available | Permitted in Filing Model? | Permitted in Hearing Model? |
+### Tier A — Available at Filing Stage
+These features are known and permanently recorded in the court registry at the moment a case is filed ($T_{\text{filing}}$). They are permitted across **all JDIS models**.
+
+| Column / Feature Name | Source Field(s) | Description | Leakage Status | Permitted In |
 | :--- | :--- | :--- | :--- | :--- |
-| `date_first_list` | `cases_YYYY.csv` | First listing date | **NO (LEAKAGE)** | **YES** |
-| `filing_to_first_list_days` | `date_first_list - date_of_filing` | First hearing gap | **NO (LEAKAGE)** | **YES** |
-| `purpose_name` / `purpose_string` | `cases_YYYY.csv` | Current hearing stage | **NO (LEAKAGE)** | **YES** |
-| `date_last_list` | `cases_YYYY.csv` | Last hearing date | **NO (LEAKAGE)** | **YES (As of snapshot)** |
-| `date_next_list` | `cases_YYYY.csv` | Next scheduled hearing | **NO (LEAKAGE)** | **YES (As of snapshot)** |
-| `hearing_span_days` | `date_last_list - date_first_list` | Hearing duration span | **NO (LEAKAGE)** | **YES** |
-| `next_listing_gap_days` | `date_next_list - date_last_list` | Next listing interval | **NO (LEAKAGE)** | **YES** |
+| `state_code` / `state_str` | `cases_YYYY.csv` / `cases_state_key.csv` | State jurisdiction name and code | **Safe at Filing** | Datasets A, B, C |
+| `dist_code` / `district_str` | `cases_YYYY.csv` / `cases_district_key.csv` | District jurisdiction name and code | **Safe at Filing** | Datasets A, B, C |
+| `court_no` / `court_str` | `cases_YYYY.csv` / `cases_court_key.csv` | Court complex establishment | **Safe at Filing** | Datasets A, B, C |
+| `filing_year`, `month`, `day_of_week`, `quarter` | `date_of_filing` | Temporal calendar anchors | **Safe at Filing** | Datasets A, B, C |
+| `judge_position_clean` | `judge_position` | Presiding bench position (CJM, District, etc.) | **Safe at Filing** | Datasets A, B, C |
+| `ddl_filing_judge_id` | `judge_case_merge_key.csv` | Judge assigned at case registration | **Safe at Filing** | Datasets A, B, C |
+| `judge_gender` | `judges_clean.csv` | Presiding judge gender flag | **Safe at Filing** | Datasets A, B, C |
+| `case_type_str` / `type_name` | `type_name_key.csv` | Initial case category description | **Safe at Filing** | Datasets A, B, C |
+| `case_category` / `is_criminal_code` | 4-category classification | High-Confidence Criminal / Civil / Other | **Safe at Filing** | Datasets A, B, C |
+| `statutory_act_count` | `acts_sections.csv` | Count of unique statutory Acts charged | **Safe at Filing** | Datasets A, B, C |
+| `ipc_section_count` | `acts_sections.csv` | Count of IPC sections charged | **Safe at Filing** | Datasets A, B, C |
+| `bailable_ipc_flag` | `acts_sections.csv` | Bailable offense indicator under CrPC | **Safe at Filing** | Datasets A, B, C |
+| `primary_act_id` | `acts_sections.csv` | Dominant legal Act ID | **Safe at Filing** | Datasets A, B, C |
+| `female_defendant_clean` | `cases_YYYY.csv` | Defendant gender indicator at filing | **Safe at Filing** | Datasets A, B, C |
+| `female_petitioner_clean` | `cases_YYYY.csv` | Petitioner gender indicator at filing | **Safe at Filing** | Datasets A, B, C |
+| `female_adv_def_clean` | `cases_YYYY.csv` | Defense advocate gender flag | **Safe at Filing** | Datasets A, B, C |
+| `female_adv_pet_clean` | `cases_YYYY.csv` | Petitioner advocate gender flag | **Safe at Filing** | Datasets A, B, C |
+| `court_prior_delay_rate` | Expanding window ($< T_{\text{filing}}$) | Smoothed prior court delay rate | **Time-Safe Historical** | Datasets A, B, C |
+| `court_prior_avg_duration` | Expanding window ($< T_{\text{filing}}$) | Historical court mean duration (days) | **Time-Safe Historical** | Datasets A, B, C |
+| `court_prior_active_backlog` | Expanding window ($< T_{\text{filing}}$) | Active undecided filings in court at $T_{\text{filing}}$ | **Time-Safe Historical** | Datasets A, B, C |
+| `casetype_prior_delay_rate` | Expanding window ($< T_{\text{filing}}$) | Historical delay rate for case type | **Time-Safe Historical** | Datasets A, B, C |
+| `judge_court_degree` | `judges_clean.csv` | Number of distinct courts judge presided over | **Graph Feature** | Datasets A, B, C |
+| `judge_tenure_days` | `judges_clean.csv` | Total career tenure days of judge | **Graph Feature** | Datasets A, B, C |
+| `court_judge_turnover_count` | `judges_clean.csv` | Number of judges assigned to court | **Graph Feature** | Datasets A, B, C |
+| `tfidf_0` to `tfidf_49` | Fit strictly on Train (2010–2016) | Dense SVD components of legal tokens | **Time-Safe NLP** | Datasets A, B |
 
 ---
 
-### Tier 3: Post-Disposal Fields & Ground Truth Targets (STRICTLY PROHIBITED AS FEATURES)
-These fields represent the outcome or the mathematical definition of the ground truth target. **Using any of these fields as an input feature constitutes fatal scientific leakage.**
+### Tier B — Available In-Progress (Ongoing & Hearing Stage Models Only)
+These features become known only after the case has entered the courtroom schedule. **They MUST NOT be used in the initial Filing-Time Model (Dataset A).**
 
-| Field / Target Name | Source Table | Risk Description | Usage Policy |
-| :--- | :--- | :--- | :--- |
-| `date_of_decision` | `cases_YYYY.csv` | Final decision timestamp | **PROHIBITED (Used ONLY to compute target `duration_days`)** |
-| `disp_name` / `disp_name_s` | `cases_YYYY.csv` / `disp_name_key.csv` | Final judgment outcome (e.g. *acquitted, dismissed*) | **STRICTLY PROHIBITED (Post-hoc outcome)** |
-| `ddl_decision_judge_id` | `judge_case_merge_key.csv` | Judge presiding at final disposition | **STRICTLY PROHIBITED (Disposal-time fact)** |
-| `case_duration_days` | `date_of_decision - date_of_filing` | Primary Regression Target | **TARGET ONLY** |
-| `delay_24m` | `case_duration_days > 730.5` | Primary Binary Classification Target | **TARGET ONLY** |
-| `delay_12m` / `delay_36m` | `case_duration_days > 365.25 / 1095.75` | Sensitivity Analysis Targets | **TARGET ONLY** |
+| Column / Feature Name | Source Field(s) | Description | Prediction Stage | Permitted In |
+| :--- | :--- | :--- | :--- | :--- |
+| `filing_to_first_list_days` | `date_first_list - date_of_filing` | Days elapsed before first hearing | First Listing Milestone | Dataset B Only |
+| `days_since_filing_at_last_list` | `date_last_list - date_of_filing` | Total case age at most recent hearing | Active Hearing Milestone | Dataset C Only |
+| `hearing_span_days` | `date_last_list - date_first_list` | Total active hearing duration to date | Active Hearing Milestone | Dataset C Only |
+| `purpose_str` | `purpose_name_key.csv` | Procedural stage of active hearing | Active Hearing Milestone | Dataset C Only |
 
 ---
 
-## 3. Strict Chronological Windowing for Historical Features
+### Tier C — Post-Disposal Fields & Ground Truth Targets (STRICTLY PROHIBITED AS INPUTS)
+These fields represent the outcome or target. **Using any of these as an input feature constitutes fatal scientific contamination.**
 
-To prevent look-ahead bias in historical statistics (e.g., judge historical delay rate, court congestion), the following mathematical rules are enforced:
+| Prohibited Column | Reason for Prohibition |
+| :--- | :--- |
+| `date_of_decision` / `date_of_decision_dt` | Future event (target timestamp) |
+| `disp_name` / `disp_str` / `disp_name_s` | Post-disposal judgment outcome (e.g. *acquitted, convicted, dismissed*) |
+| `ddl_decision_judge_id` | Presiding judge at final disposal (post-filing fact) |
+| `date_next_list` / `date_next_list_dt` | Ground truth target for Next-Listing Delay Model |
+| `case_duration_days` | Ground truth regression target |
+| `delay_24m`, `delay_12m`, `delay_36m` | Ground truth binary classification targets |
+| `next_listing_gap_days` | Ground truth next-listing regression target |
+| `hearing_continuation_risk` | Ground truth next-listing classification target |
 
-### Rule 1: Expanding Historical Window
-For any case $i$ filed on date $T_i = \text{date\_of\_filing}_i$ in court $C_i$:
-$$\text{court\_prior\_delay\_rate}(i) = \frac{\sum_{j \in S(i)} \mathbb{I}(\text{duration}_j > 730.5)}{|S(i)|}$$
-Where the eligible historical case set $S(i)$ is defined strictly as:
-$$S(i) = \{ j \mid \text{court}_j = C_i \;\land\; \text{date\_of\_decision}_j < T_i \}$$
-*Cases decided on or after $T_i$ are mathematically excluded from the numerator and denominator.*
+---
 
-### Rule 2: Minimum Support Smoothing
-To avoid extreme noisy estimates for judges or courts with few prior resolved cases, empirical Bayes smoothing is applied:
-$$\hat{\mu}_{\text{judge}} = \frac{N_{\text{prior}} \cdot \bar{y}_{\text{prior}} + M \cdot \mu_{\text{global}}}{N_{\text{prior}} + M}$$
-Where $M = 30$ cases (prior weight parameter) and $\mu_{\text{global}}$ is the global historical delay rate before $T_i$.
+## 3. Separated Research Datasets
 
-### Rule 3: Temporal Train/Validation/Test Split
-Data must **never** be randomly split across time (e.g. random `train_test_split`).
-- **Training Cohort**: Cases filed in **2010–2016**
-- **Validation Cohort**: Cases filed in **2017**
-- **Testing Cohort**: Cases filed in **2018**
-*This guarantees that models are tested on strictly future unseen case filings.*
+| Dataset | Parquet File Path | Permitted Feature Tiers | Primary Target | Modeling Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **Dataset A** | `data/features/filing_features.parquet` | **Tier A Only** | `case_duration_days`, `delay_24m` | Filing-Stage Duration Regression & Delay Classification |
+| **Dataset B** | `data/features/ongoing_features.parquet` | **Tier A + Tier B (First List)** | `case_duration_days`, `delay_24m` | Ongoing-Case Progression Model |
+| **Dataset C** | `data/features/hearing_features.parquet` | **Tier A + Tier B (Last List)** | `next_listing_gap_days`, `hearing_continuation_risk` | Next-Listing Delay & Hearing Continuation Model |
+
+---
+
+## 4. Automated Leakage Prevention Verification
+
+Automated regression tests in `tests/data/test_leakage.py` execute on every build to verify:
+1. **Zero Tier C columns** exist in `filing_features.parquet` or `ongoing_features.parquet`.
+2. **Zero `date_next_list`** columns exist in `hearing_features.parquet`.
+3. **Zero look-ahead leakage** in historical expanding windows.
