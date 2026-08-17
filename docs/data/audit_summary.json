@@ -1,0 +1,163 @@
+{
+  "total_cases_sampled": 450000,
+  "disposed_cases_pct": 82.27,
+  "valid_resolved_duration_mean_days": 538.32,
+  "valid_resolved_duration_median_days": 311.0,
+  "delay_12m_pct": 46.76,
+  "delay_24m_pct": 27.89,
+  "delay_36m_pct": 16.59,
+  "missing_summary": [
+    {
+      "column": "ddl_case_id",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 450000,
+      "sample_val": "01-01-01-200308002162010"
+    },
+    {
+      "column": "year",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 9,
+      "sample_val": "2010"
+    },
+    {
+      "column": "state_code",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 1,
+      "sample_val": "1"
+    },
+    {
+      "column": "dist_code",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 4,
+      "sample_val": "1"
+    },
+    {
+      "column": "court_no",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 22,
+      "sample_val": "1"
+    },
+    {
+      "column": "cino",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 450000,
+      "sample_val": "MHNB030013812010"
+    },
+    {
+      "column": "judge_position",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 10,
+      "sample_val": "chief judicial magistrate"
+    },
+    {
+      "column": "female_defendant",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 4,
+      "sample_val": "0 male"
+    },
+    {
+      "column": "female_petitioner",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 4,
+      "sample_val": "1 female"
+    },
+    {
+      "column": "female_adv_def",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 4,
+      "sample_val": "0"
+    },
+    {
+      "column": "female_adv_pet",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 4,
+      "sample_val": "-9998"
+    },
+    {
+      "column": "type_name",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 465,
+      "sample_val": "790"
+    },
+    {
+      "column": "purpose_name",
+      "dtype": "float64",
+      "missing_count": 8720,
+      "missing_pct": 1.94,
+      "unique_values": 693,
+      "sample_val": "5228.0"
+    },
+    {
+      "column": "disp_name",
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 39,
+      "sample_val": "42"
+    },
+    {
+      "column": "date_of_filing",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 2698,
+      "sample_val": "2010-12-13"
+    },
+    {
+      "column": "date_of_decision",
+      "dtype": "object",
+      "missing_count": 79782,
+      "missing_pct": 17.73,
+      "unique_values": 3123,
+      "sample_val": "2011-06-19"
+    },
+    {
+      "column": "date_first_list",
+      "dtype": "object",
+      "missing_count": 1602,
+      "missing_pct": 0.36,
+      "unique_values": 2918,
+      "sample_val": "2011-06-08"
+    },
+    {
+      "column": "date_last_list",
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_values": 3285,
+      "sample_val": "2011-06-20"
+    },
+    {
+      "column": "date_next_list",
+      "dtype": "object",
+      "missing_count": 2177,
+      "missing_pct": 0.48,
+      "unique_values": 3275,
+      "sample_val": "2011-06-24"
+    }
+  ]
+}

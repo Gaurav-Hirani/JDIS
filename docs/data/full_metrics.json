@@ -1,0 +1,49 @@
+{
+  "total_cases_sampled": 450000,
+  "years_covered": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018
+  ],
+  "disposed_count": 370217,
+  "disposed_pct": 82.27,
+  "pending_count": 79783,
+  "pending_pct": 17.73,
+  "invalid_duration_count": 543,
+  "valid_resolved_count": 369674,
+  "duration_stats": {
+    "mean_days": 538.32,
+    "std_days": 629.17,
+    "median_days": 311.0,
+    "q25_days": 41.0,
+    "q75_days": 809.0,
+    "q90_days": 1451.0,
+    "q95_days": 1907.0,
+    "min_days": 0.0,
+    "max_days": 3811.0
+  },
+  "delay_rates": {
+    "12_months_pct": 46.76,
+    "24_months_pct": 27.89,
+    "36_months_pct": 16.59
+  },
+  "hearing_dates_validity": {
+    "first_list_valid_pct": 99.64,
+    "last_list_valid_pct": 99.52,
+    "next_list_valid_pct": 99.52,
+    "filing_to_first_median_days": 0.0,
+    "first_to_last_median_days": 356.0
+  },
+  "metadata_counts": {
+    "distinct_states": 32,
+    "distinct_districts": 632,
+    "distinct_courts": 6958,
+    "distinct_judges": 98478
+  }
+}
