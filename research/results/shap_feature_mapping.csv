@@ -1,0 +1,698 @@
+model_feature,parent_feature,feature_group,human_readable_description
+case_type_str_cri.bail appln.,case_type_str,Basic Case,Standardized case type string
+type_name_1689,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_350.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_21,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_298.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_2594,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_323.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_3425,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_326.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_540.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL-CUM-CRIMINAL COURT BHADGAON,court_str,Court,Court establishment name string
+type_name_4874,type_name,Basic Case,Granular case type name identifier
+case_type_str_macp. m.a.,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_354.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_6111,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_331.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_50.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_2962,type_name,Basic Case,Granular case type name identifier
+court_no_2,court_no,Court,Numeric court identifier
+type_name_2817,type_name,Basic Case,Granular case type name identifier
+female_petitioner_clean_UNCLEAR,female_petitioner_clean,Basic Case,Indicator for female petitioner presence
+court_no_3,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_605.0,ddl_filing_judge_id,Judge,Filing judge identifier
+female_defendant_clean_UNCLEAR,female_defendant_clean,Basic Case,Indicator for female defendant presence
+court_prior_active_backlog,court_prior_active_backlog,Historical,Active backlog count of the court at filing
+case_type_str_m.a.n.r.j.i.,case_type_str,Basic Case,Standardized case type string
+dist_code_1,dist_code,Court,District code identifier
+case_type_str_m.c.a.,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_1014.0,ddl_filing_judge_id,Judge,Filing judge identifier
+filing_month,filing_month,Basic Case,Month of case filing
+female_adv_def_clean_0,female_adv_def_clean,Basic Case,Indicator for female defense advocate
+court_no_9,court_no,Court,Numeric court identifier
+court_no_19,court_no,Court,Numeric court identifier
+female_defendant_clean_FEMALE,female_defendant_clean,Basic Case,Indicator for female defendant presence
+case_type_str_r.c.a.,case_type_str,Basic Case,Standardized case type string
+type_name_4016,type_name,Basic Case,Granular case type name identifier
+case_type_str_spl case mseb,case_type_str,Basic Case,Standardized case type string
+type_name_4563,type_name,Basic Case,Granular case type name identifier
+female_defendant_clean_MALE,female_defendant_clean,Basic Case,Indicator for female defendant presence
+case_type_str_cri.m.a.,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_215.0,ddl_filing_judge_id,Judge,Filing judge identifier
+dist_code_2,dist_code,Court,District code identifier
+court_str_Civil Court J.D. Shindkheda,court_str,Court,Court establishment name string
+type_name_6143,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_252.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_Civil Court Senior Division Nandurbar,court_str,Court,Court establishment name string
+type_name_3020,type_name,Basic Case,Granular case type name identifier
+case_type_str_marriage petn.,case_type_str,Basic Case,Standardized case type string
+type_name_2312,type_name,Basic Case,Granular case type name identifier
+case_type_str_cri.appeal,case_type_str,Basic Case,Standardized case type string
+court_no_14,court_no,Court,Numeric court identifier
+type_name_5272,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_1125.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_3784,type_name,Basic Case,Granular case type name identifier
+type_name_1441,type_name,Basic Case,Granular case type name identifier
+type_name_5039,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_609.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_15,court_no,Court,Numeric court identifier
+case_type_str_m.a.c.p.,case_type_str,Basic Case,Standardized case type string
+female_petitioner_clean_FEMALE,female_petitioner_clean,Basic Case,Indicator for female petitioner presence
+type_name_2992,type_name,Basic Case,Granular case type name identifier
+female_adv_pet_clean_1,female_adv_pet_clean,Basic Case,Indicator for female petitioner advocate
+court_prior_delay_rate,court_prior_delay_rate,Historical,Historical delay rate of the court at filing
+casetype_prior_delay_rate,casetype_prior_delay_rate,Historical,Historical delay rate for the specific case type
+female_defendant_clean_MISSING,female_defendant_clean,Basic Case,Indicator for female defendant presence
+case_type_str_l.a.r.,case_type_str,Basic Case,Standardized case type string
+type_name_6199,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_1056.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_4626,type_name,Basic Case,Granular case type name identifier
+type_name_1924,type_name,Basic Case,Granular case type name identifier
+case_category_Other/Unknown/Unclassified,case_category,Basic Case,Case category ID
+case_category_High-Confidence Criminal,case_category,Basic Case,Case category ID
+case_type_str_reg dkst,case_type_str,Basic Case,Standardized case type string
+type_name_1907,type_name,Basic Case,Granular case type name identifier
+type_name_4827,type_name,Basic Case,Granular case type name identifier
+court_prior_avg_duration,court_prior_avg_duration,Historical,Historical average duration of the court at filing
+type_name_5506,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_217.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_3786,type_name,Basic Case,Granular case type name identifier
+type_name_5846,type_name,Basic Case,Granular case type name identifier
+court_no_11,court_no,Court,Numeric court identifier
+female_adv_pet_clean_0,female_adv_pet_clean,Basic Case,Indicator for female petitioner advocate
+type_name_5197,type_name,Basic Case,Granular case type name identifier
+filing_day_of_week,filing_day_of_week,Basic Case,Day of the week of case filing
+judge_gender_1 female,judge_gender,Judge,Judge gender
+female_adv_pet_clean_-2,female_adv_pet_clean,Basic Case,Indicator for female petitioner advocate
+type_name_2587,type_name,Basic Case,Granular case type name identifier
+female_adv_def_clean_-2,female_adv_def_clean,Basic Case,Indicator for female defense advocate
+court_no_7,court_no,Court,Numeric court identifier
+type_name_4157,type_name,Basic Case,Granular case type name identifier
+female_adv_def_clean_1,female_adv_def_clean,Basic Case,Indicator for female defense advocate
+type_name_1423,type_name,Basic Case,Granular case type name identifier
+type_name_2765,type_name,Basic Case,Granular case type name identifier
+case_type_str_r.c.c.,case_type_str,Basic Case,Standardized case type string
+case_type_str_darkhast,case_type_str,Basic Case,Standardized case type string
+court_str_CIVIL CUM CRIMINAL COURT BHUSAWAL,court_str,Court,Court establishment name string
+type_name_4400,type_name,Basic Case,Granular case type name identifier
+court_no_18,court_no,Court,Numeric court identifier
+case_type_str_civil m.a.,case_type_str,Basic Case,Standardized case type string
+type_name_3633,type_name,Basic Case,Granular case type name identifier
+type_name_1696,type_name,Basic Case,Granular case type name identifier
+judge_position_clean_civil_judge_junior,judge_position_clean,Judge,Standardized judge position
+court_str_CIVIL COURT SR.DIVN. AMALNER,court_str,Court,Court establishment name string
+type_name_1429,type_name,Basic Case,Granular case type name identifier
+court_no_4,court_no,Court,Numeric court identifier
+court_str_Civil Court J.D. Shirpur,court_str,Court,Court establishment name string
+court_no_13,court_no,Court,Numeric court identifier
+type_name_5367,type_name,Basic Case,Granular case type name identifier
+type_name_3674,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_178.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_cri.rev.app.,case_type_str,Basic Case,Standardized case type string
+case_type_str_juvenile,case_type_str,Basic Case,Standardized case type string
+case_type_str_r.c.s.,case_type_str,Basic Case,Standardized case type string
+judge_position_clean_civil_judge_senior,judge_position_clean,Judge,Standardized judge position
+court_str_Chief Judcial Magistrate Nandurbar,court_str,Court,Court establishment name string
+type_name_5502,type_name,Basic Case,Granular case type name identifier
+type_name_5034,type_name,Basic Case,Granular case type name identifier
+female_petitioner_clean_MALE,female_petitioner_clean,Basic Case,Indicator for female petitioner presence
+type_name_3432,type_name,Basic Case,Granular case type name identifier
+type_name_3510,type_name,Basic Case,Granular case type name identifier
+type_name_4636,type_name,Basic Case,Granular case type name identifier
+court_no_12,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_602.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_5,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_92.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_macp. dkst.,case_type_str,Basic Case,Standardized case type string
+court_no_6,court_no,Court,Numeric court identifier
+case_type_str_spl .dkst,case_type_str,Basic Case,Standardized case type string
+case_type_str_s.c.c.,case_type_str,Basic Case,Standardized case type string
+judge_position_clean_district_and_sessions,judge_position_clean,Judge,Standardized judge position
+type_name_4025,type_name,Basic Case,Granular case type name identifier
+judge_tenure_days,judge_tenure_days,Judge,Judge tenure duration at filing
+"court_str_Civil Court, J.D. and J.M.F.C., Nawapur.",court_str,Court,Court establishment name string
+type_name_5274,type_name,Basic Case,Granular case type name identifier
+type_name_2938,type_name,Basic Case,Granular case type name identifier
+female_adv_def_clean_-1,female_adv_def_clean,Basic Case,Indicator for female defense advocate
+type_name_5238,type_name,Basic Case,Granular case type name identifier
+type_name_4018,type_name,Basic Case,Granular case type name identifier
+court_no_17,court_no,Court,Numeric court identifier
+judge_position_clean_chief_judicial_magistrate,judge_position_clean,Judge,Standardized judge position
+court_str_Civil Court J.D. and J.M.F.C.Taloda,court_str,Court,Court establishment name string
+case_category_High-Confidence Civil,case_category,Basic Case,Case category ID
+type_name_5245,type_name,Basic Case,Granular case type name identifier
+case_type_str_spl.c.s.,case_type_str,Basic Case,Standardized case type string
+court_str_CIVIL-CUM-CRIMINAL COURT DHARANGAON,court_str,Court,Court establishment name string
+type_name_947,type_name,Basic Case,Granular case type name identifier
+"court_str_DISTRICT AND SESSIONS COURT, NANDURBAR",court_str,Court,Court establishment name string
+female_adv_pet_clean_-1,female_adv_pet_clean,Basic Case,Indicator for female petitioner advocate
+court_str_Additional District  And Sessions Court Shahada,court_str,Court,Court establishment name string
+"court_str_CHIEF JUDICIAL MAGISTRATE, JALGAON",court_str,Court,Court establishment name string
+court_no_8,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_320.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_5698,type_name,Basic Case,Granular case type name identifier
+type_name_4628,type_name,Basic Case,Granular case type name identifier
+type_name_4051,type_name,Basic Case,Granular case type name identifier
+type_name_5487,type_name,Basic Case,Granular case type name identifier
+dist_code_4,dist_code,Court,District code identifier
+type_name_1048,type_name,Basic Case,Granular case type name identifier
+court_no_1,court_no,Court,Numeric court identifier
+case_type_str_sessions case,case_type_str,Basic Case,Standardized case type string
+type_name_790,type_name,Basic Case,Granular case type name identifier
+"court_str_DISTRICT AND SESSIONS COURT, DHULE",court_str,Court,Court establishment name string
+court_str_Jt. Civil Court J.D. and J.M.F.C. Shahada,court_str,Court,Court establishment name string
+ddl_filing_judge_id_277.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_4770,type_name,Basic Case,Granular case type name identifier
+type_name_3242,type_name,Basic Case,Granular case type name identifier
+type_name_5036,type_name,Basic Case,Granular case type name identifier
+dist_code_3,dist_code,Court,District code identifier
+type_name_2786,type_name,Basic Case,Granular case type name identifier
+type_name_5736,type_name,Basic Case,Granular case type name identifier
+"court_str_Civil Court J.D. and J.M.F.C., Dondaicha",court_str,Court,Court establishment name string
+type_name_6320,type_name,Basic Case,Granular case type name identifier
+type_name_6315,type_name,Basic Case,Granular case type name identifier
+type_name_5905,type_name,Basic Case,Granular case type name identifier
+type_name_3284,type_name,Basic Case,Granular case type name identifier
+judge_gender_0 nonfemale,judge_gender,Judge,Judge gender
+type_name_5394,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_1113.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_6097,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_371.0,ddl_filing_judge_id,Judge,Filing judge identifier
+"court_str_DISTRICT COURT 1 AND ADDL. SESSIONS COURT, AMALNER",court_str,Court,Court establishment name string
+"court_str_CIVIL COURT SENIOR DIVISION, DHULE",court_str,Court,Court establishment name string
+type_name_1919,type_name,Basic Case,Granular case type name identifier
+type_name_2201,type_name,Basic Case,Granular case type name identifier
+"court_str_CHIEF JUDICIAL MAGISTRATE COURT, DHULE",court_str,Court,Court establishment name string
+type_name_3649,type_name,Basic Case,Granular case type name identifier
+court_str_JUDICIAL MAGISTRATE F C RLY BHUSAWAL,court_str,Court,Court establishment name string
+"court_str_DISTRICT COURT, BULDANA",court_str,Court,Court establishment name string
+court_str_CIVIL COURT SENIOR DIVISION JALGAON,court_str,Court,Court establishment name string
+type_name_1842,type_name,Basic Case,Granular case type name identifier
+type_name_4709,type_name,Basic Case,Granular case type name identifier
+statutory_act_count,statutory_act_count,Basic Case,Number of statutory acts involved
+type_name_3885,type_name,Basic Case,Granular case type name identifier
+type_name_3555,type_name,Basic Case,Granular case type name identifier
+type_name_3437,type_name,Basic Case,Granular case type name identifier
+type_name_5503,type_name,Basic Case,Granular case type name identifier
+court_str_DISTRICT AND SESSIONS COURT JALGAON,court_str,Court,Court establishment name string
+type_name_5236,type_name,Basic Case,Granular case type name identifier
+type_name_1683,type_name,Basic Case,Granular case type name identifier
+type_name_5984,type_name,Basic Case,Granular case type name identifier
+judge_position_clean_civil_court,judge_position_clean,Judge,Standardized judge position
+ddl_filing_judge_id_204.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_3508,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_280.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_10,court_no,Court,Numeric court identifier
+type_name_5424,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_250.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_Civil  Court J.D. Sakri,court_str,Court,Court establishment name string
+court_no_16,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_1005.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_2880,type_name,Basic Case,Granular case type name identifier
+court_str_JUDICIAL MAGISTRATE F.C.AMALNER,court_str,Court,Court establishment name string
+ddl_filing_judge_id_161.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_1036,type_name,Basic Case,Granular case type name identifier
+judge_position_clean_other,judge_position_clean,Judge,Standardized judge position
+court_str_Civil Court S.D. Shahada,court_str,Court,Court establishment name string
+ipc_section_count,ipc_section_count,Basic Case,Number of IPC sections cited
+type_name_6253,type_name,Basic Case,Granular case type name identifier
+type_name_3651,type_name,Basic Case,Granular case type name identifier
+type_name_1862,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_240.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_5282,type_name,Basic Case,Granular case type name identifier
+type_name_1673,type_name,Basic Case,Granular case type name identifier
+type_name_5044,type_name,Basic Case,Granular case type name identifier
+ddl_filing_judge_id_150.0,ddl_filing_judge_id,Judge,Filing judge identifier
+type_name_1849,type_name,Basic Case,Granular case type name identifier
+"court_str_Civil Court J.D. and J.M.F.C., Akkalkuwa",court_str,Court,Court establishment name string
+type_name_3726,type_name,Basic Case,Granular case type name identifier
+type_name_2401,type_name,Basic Case,Granular case type name identifier
+type_name_5682,type_name,Basic Case,Granular case type name identifier
+primary_act_id_4759.0,primary_act_id,Basic Case,Primary statutory act ID
+case_type_str_spl. marriage petn.,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_75.0,ddl_filing_judge_id,Judge,Filing judge identifier
+primary_act_id_17353.0,primary_act_id,Basic Case,Primary statutory act ID
+ddl_filing_judge_id_550.0,ddl_filing_judge_id,Judge,Filing judge identifier
+bailable_ipc_flag_-1,bailable_ipc_flag,Basic Case,Indicator if IPC sections are bailable
+case_type_str_spl.case,case_type_str,Basic Case,Standardized case type string
+is_criminal_code_1,is_criminal_code,Basic Case,"Civil vs Criminal code (1=Criminal, 0=Civil)"
+is_criminal_code_0,is_criminal_code,Basic Case,"Civil vs Criminal code (1=Criminal, 0=Civil)"
+is_criminal_code_-1,is_criminal_code,Basic Case,"Civil vs Criminal code (1=Criminal, 0=Civil)"
+ddl_filing_judge_id_787.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_spl.case child prot.,case_type_str,Basic Case,Standardized case type string
+case_type_str_spl.cri.m.a.,case_type_str,Basic Case,Standardized case type string
+primary_act_id_missing,primary_act_id,Basic Case,Primary statutory act ID
+ddl_filing_judge_id_526.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_uc,case_type_str,Basic Case,Standardized case type string
+case_type_str_st,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_551.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_u.i case,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_74.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_succession case,case_type_str,Basic Case,Standardized case type string
+case_type_str_sum.civ.suit,case_type_str,Basic Case,Standardized case type string
+case_category_Ambiguous/Mixed,case_category,Basic Case,Case category ID
+case_type_str_summary trial,case_type_str,Basic Case,Standardized case type string
+case_type_str_summon case,case_type_str,Basic Case,Standardized case type string
+case_type_str_warrant,case_type_str,Basic Case,Standardized case type string
+case_type_str_w.c.f.a.case,case_type_str,Basic Case,Standardized case type string
+case_type_str_summons for judgt,case_type_str,Basic Case,Standardized case type string
+case_type_str_ucr,case_type_str,Basic Case,Standardized case type string
+case_type_str_spl. case (excise),case_type_str,Basic Case,Standardized case type string
+case_type_str_title appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_stay application,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_1138.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_845.0,ddl_filing_judge_id,Judge,Filing judge identifier
+judge_position_clean_judicial_magistrate,judge_position_clean,Judge,Standardized judge position
+case_type_str_probate,case_type_str,Basic Case,Standardized case type string
+case_type_str_private complaint,case_type_str,Basic Case,Standardized case type string
+case_type_str_prc sp,case_type_str,Basic Case,Standardized case type string
+case_type_str_police challan (summon trial),case_type_str,Basic Case,Standardized case type string
+case_type_str_police cases w,case_type_str,Basic Case,Standardized case type string
+case_type_str_police cases pw,case_type_str,Basic Case,Standardized case type string
+case_type_str_police cases ps,case_type_str,Basic Case,Standardized case type string
+case_type_str_petty cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_petition a,case_type_str,Basic Case,Standardized case type string
+case_type_str_pcso,case_type_str,Basic Case,Standardized case type string
+case_type_str_p w case,case_type_str,Basic Case,Standardized case type string
+case_type_str_p  and  sc,case_type_str,Basic Case,Standardized case type string
+case_type_str_other misc.cri.appln,case_type_str,Basic Case,Standardized case type string
+case_type_str_other misc.appln.,case_type_str,Basic Case,Standardized case type string
+case_type_str_original suit,case_type_str,Basic Case,Standardized case type string
+case_type_str_original civil suits 17,case_type_str,Basic Case,Standardized case type string
+case_type_str_original civil suits,case_type_str,Basic Case,Standardized case type string
+case_type_str_ndps. s. case,case_type_str,Basic Case,Standardized case type string
+case_type_str_nact,case_type_str,Basic Case,Standardized case type string
+case_type_str_munci. appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_mseb ma,case_type_str,Basic Case,Standardized case type string
+case_type_str_pwdva appln.,case_type_str,Basic Case,Standardized case type string
+judge_position_clean_addl_district_sessions,judge_position_clean,Judge,Standardized judge position
+case_type_str_special sessions cases,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_missing,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_special court cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_spcs el,case_type_str,Basic Case,Standardized case type string
+case_type_str_smst r,case_type_str,Basic Case,Standardized case type string
+case_type_str_sessions trial(n),case_type_str,Basic Case,Standardized case type string
+case_type_str_sessions case type 1,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_846.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_session trial,case_type_str,Basic Case,Standardized case type string
+case_type_str_session case old,case_type_str,Basic Case,Standardized case type string
+case_type_str_scc suit,case_type_str,Basic Case,Standardized case type string
+case_type_str_sc doct,case_type_str,Basic Case,Standardized case type string
+case_type_str_s.t.,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_52.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_93.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_regular suit,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_932.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_933.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_rcr,case_type_str,Basic Case,Standardized case type string
+case_type_str_rca dj,case_type_str,Basic Case,Standardized case type string
+case_type_str_rca,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_96.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_r.cri. case,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_523.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_38.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_516.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL-CUM-CRIMINAL COURT CHALISGAON,court_str,Court,Court establishment name string
+ddl_filing_judge_id_162.0,ddl_filing_judge_id,Judge,Filing judge identifier
+"court_str_Civil Court Senior Division, Bhusawal",court_str,Court,Court establishment name string
+ddl_filing_judge_id_163.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_205.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_216.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_239.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL-CUM-CRIMINAL COURT PACHORA,court_str,Court,Court establishment name string
+court_str_CIVIL-CUM-CRIMINAL COURT JAMNER,court_str,Court,Court establishment name string
+ddl_filing_judge_id_251.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL CUM CRIMINAL COURT YAWAL,court_str,Court,Court establishment name string
+ddl_filing_judge_id_51.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_268.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_278.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL CUM CRIMINAL COURT PAROLA,court_str,Court,Court establishment name string
+court_str_CIVIL CUM CRIMINAL COURT MUKTAINAGAR,court_str,Court,Court establishment name string
+court_str_CIVIL CUM CRIMINAL COURT ERANDOL,court_str,Court,Court establishment name string
+ddl_filing_judge_id_279.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL CUM CRIMINAL  COURT CHOPDA,court_str,Court,Court establishment name string
+ddl_filing_judge_id_297.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_299.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_motor vehicle act,case_type_str,Basic Case,Standardized case type string
+ddl_filing_judge_id_155.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_154.0,ddl_filing_judge_id,Judge,Filing judge identifier
+"court_str_District and Additional Session Court, Bhusawal",court_str,Court,Court establishment name string
+ddl_filing_judge_id_1135.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1129.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_114.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_117.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1115.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1114.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1101.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_127.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_132.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1057.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_134.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_137.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_103.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1015.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_145.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1004.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_147.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_148.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_149.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CIVIL COURT SENIOR DIVISION CHALISGAON,court_str,Court,Court establishment name string
+court_str_CIVIL AND CRIMINAL COURT RAVER,court_str,Court,Court establishment name string
+ddl_filing_judge_id_3.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_366.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_1137.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_380.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_381.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_382.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_39.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_399.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_400.0,ddl_filing_judge_id,Judge,Filing judge identifier
+state_code_1,state_code,Court,State code identifier
+ddl_filing_judge_id_401.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_402.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_411.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_429.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_430.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_431.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_432.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_460.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_480.0,ddl_filing_judge_id,Judge,Filing judge identifier
+female_petitioner_clean_MISSING,female_petitioner_clean,Basic Case,Indicator for female petitioner presence
+ddl_filing_judge_id_497.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_372.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_356.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_str_CHIEF JUDICIAL MAGISTRATE BULDANA.,court_str,Court,Court establishment name string
+ddl_filing_judge_id_353.0,ddl_filing_judge_id,Judge,Filing judge identifier
+"court_str_C.J.J.D. AND J.M.F.C., DHADGAON/AKRANI",court_str,Court,Court establishment name string
+ddl_filing_judge_id_300.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_301.0,ddl_filing_judge_id,Judge,Filing judge identifier
+district_str_Nandurbar,district_str,Court,District name string
+ddl_filing_judge_id_311.0,ddl_filing_judge_id,Judge,Filing judge identifier
+district_str_Jalgaon,district_str,Court,District name string
+ddl_filing_judge_id_321.0,ddl_filing_judge_id,Judge,Filing judge identifier
+district_str_Dhule,district_str,Court,District name string
+district_str_Buldhana,district_str,Court,District name string
+state_str_Maharashtra,state_str,Court,State name string
+ddl_filing_judge_id_324.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_325.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_332.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_333.0,ddl_filing_judge_id,Judge,Filing judge identifier
+ddl_filing_judge_id_338.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_22,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_351.0,ddl_filing_judge_id,Judge,Filing judge identifier
+court_no_20,court_no,Court,Numeric court identifier
+ddl_filing_judge_id_352.0,ddl_filing_judge_id,Judge,Filing judge identifier
+case_type_str_mp,case_type_str,Basic Case,Standardized case type string
+case_type_str_execution,case_type_str,Basic Case,Standardized case type string
+case_type_str_motor vehicle  act,case_type_str,Basic Case,Standardized case type string
+type_name_3324,type_name,Basic Case,Granular case type name identifier
+type_name_3780,type_name,Basic Case,Granular case type name identifier
+type_name_3783,type_name,Basic Case,Granular case type name identifier
+type_name_3785,type_name,Basic Case,Granular case type name identifier
+type_name_3792,type_name,Basic Case,Granular case type name identifier
+type_name_3810,type_name,Basic Case,Granular case type name identifier
+type_name_3881,type_name,Basic Case,Granular case type name identifier
+type_name_3941,type_name,Basic Case,Granular case type name identifier
+type_name_3952,type_name,Basic Case,Granular case type name identifier
+type_name_3955,type_name,Basic Case,Granular case type name identifier
+type_name_3957,type_name,Basic Case,Granular case type name identifier
+type_name_3974,type_name,Basic Case,Granular case type name identifier
+type_name_4027,type_name,Basic Case,Granular case type name identifier
+type_name_4043,type_name,Basic Case,Granular case type name identifier
+type_name_4120,type_name,Basic Case,Granular case type name identifier
+type_name_4130,type_name,Basic Case,Granular case type name identifier
+type_name_3711,type_name,Basic Case,Granular case type name identifier
+type_name_3710,type_name,Basic Case,Granular case type name identifier
+type_name_3698,type_name,Basic Case,Granular case type name identifier
+type_name_3472,type_name,Basic Case,Granular case type name identifier
+type_name_3375,type_name,Basic Case,Granular case type name identifier
+type_name_3377,type_name,Basic Case,Granular case type name identifier
+type_name_3383,type_name,Basic Case,Granular case type name identifier
+type_name_3414,type_name,Basic Case,Granular case type name identifier
+type_name_3433,type_name,Basic Case,Granular case type name identifier
+type_name_3434,type_name,Basic Case,Granular case type name identifier
+type_name_3483,type_name,Basic Case,Granular case type name identifier
+type_name_3696,type_name,Basic Case,Granular case type name identifier
+type_name_3490,type_name,Basic Case,Granular case type name identifier
+type_name_3530,type_name,Basic Case,Granular case type name identifier
+type_name_3569,type_name,Basic Case,Granular case type name identifier
+type_name_3575,type_name,Basic Case,Granular case type name identifier
+type_name_3634,type_name,Basic Case,Granular case type name identifier
+type_name_3670,type_name,Basic Case,Granular case type name identifier
+type_name_4298,type_name,Basic Case,Granular case type name identifier
+type_name_4299,type_name,Basic Case,Granular case type name identifier
+type_name_4306,type_name,Basic Case,Granular case type name identifier
+type_name_5089,type_name,Basic Case,Granular case type name identifier
+type_name_4873,type_name,Basic Case,Granular case type name identifier
+type_name_4903,type_name,Basic Case,Granular case type name identifier
+type_name_4904,type_name,Basic Case,Granular case type name identifier
+type_name_4938,type_name,Basic Case,Granular case type name identifier
+type_name_4942,type_name,Basic Case,Granular case type name identifier
+type_name_4968,type_name,Basic Case,Granular case type name identifier
+type_name_5090,type_name,Basic Case,Granular case type name identifier
+type_name_4828,type_name,Basic Case,Granular case type name identifier
+type_name_5174,type_name,Basic Case,Granular case type name identifier
+type_name_5183,type_name,Basic Case,Granular case type name identifier
+type_name_5208,type_name,Basic Case,Granular case type name identifier
+type_name_5212,type_name,Basic Case,Granular case type name identifier
+type_name_5251,type_name,Basic Case,Granular case type name identifier
+type_name_5252,type_name,Basic Case,Granular case type name identifier
+type_name_4831,type_name,Basic Case,Granular case type name identifier
+type_name_479,type_name,Basic Case,Granular case type name identifier
+type_name_4427,type_name,Basic Case,Granular case type name identifier
+type_name_4612,type_name,Basic Case,Granular case type name identifier
+type_name_4434,type_name,Basic Case,Granular case type name identifier
+type_name_448,type_name,Basic Case,Granular case type name identifier
+type_name_4518,type_name,Basic Case,Granular case type name identifier
+type_name_4570,type_name,Basic Case,Granular case type name identifier
+type_name_4607,type_name,Basic Case,Granular case type name identifier
+type_name_4609,type_name,Basic Case,Granular case type name identifier
+type_name_4630,type_name,Basic Case,Granular case type name identifier
+type_name_4784,type_name,Basic Case,Granular case type name identifier
+type_name_4635,type_name,Basic Case,Granular case type name identifier
+type_name_4674,type_name,Basic Case,Granular case type name identifier
+type_name_4675,type_name,Basic Case,Granular case type name identifier
+type_name_4703,type_name,Basic Case,Granular case type name identifier
+type_name_4721,type_name,Basic Case,Granular case type name identifier
+type_name_4725,type_name,Basic Case,Granular case type name identifier
+type_name_3369,type_name,Basic Case,Granular case type name identifier
+type_name_3323,type_name,Basic Case,Granular case type name identifier
+type_name_5288,type_name,Basic Case,Granular case type name identifier
+type_name_3322,type_name,Basic Case,Granular case type name identifier
+type_name_1676,type_name,Basic Case,Granular case type name identifier
+type_name_1678,type_name,Basic Case,Granular case type name identifier
+type_name_1704,type_name,Basic Case,Granular case type name identifier
+type_name_1736,type_name,Basic Case,Granular case type name identifier
+type_name_1844,type_name,Basic Case,Granular case type name identifier
+type_name_1845,type_name,Basic Case,Granular case type name identifier
+type_name_1857,type_name,Basic Case,Granular case type name identifier
+type_name_1864,type_name,Basic Case,Granular case type name identifier
+type_name_1869,type_name,Basic Case,Granular case type name identifier
+type_name_1903,type_name,Basic Case,Granular case type name identifier
+type_name_1904,type_name,Basic Case,Granular case type name identifier
+type_name_1905,type_name,Basic Case,Granular case type name identifier
+type_name_1913,type_name,Basic Case,Granular case type name identifier
+type_name_1914,type_name,Basic Case,Granular case type name identifier
+type_name_1916,type_name,Basic Case,Granular case type name identifier
+type_name_1645,type_name,Basic Case,Granular case type name identifier
+type_name_1633,type_name,Basic Case,Granular case type name identifier
+type_name_1590,type_name,Basic Case,Granular case type name identifier
+type_name_1217,type_name,Basic Case,Granular case type name identifier
+filing_quarter,filing_quarter,Basic Case,Quarter of case filing
+type_name_1000,type_name,Basic Case,Granular case type name identifier
+type_name_1068,type_name,Basic Case,Granular case type name identifier
+type_name_1101,type_name,Basic Case,Granular case type name identifier
+type_name_1105,type_name,Basic Case,Granular case type name identifier
+type_name_1212,type_name,Basic Case,Granular case type name identifier
+type_name_1228,type_name,Basic Case,Granular case type name identifier
+type_name_1447,type_name,Basic Case,Granular case type name identifier
+type_name_1247,type_name,Basic Case,Granular case type name identifier
+type_name_1250,type_name,Basic Case,Granular case type name identifier
+type_name_1259,type_name,Basic Case,Granular case type name identifier
+type_name_1425,type_name,Basic Case,Granular case type name identifier
+type_name_1426,type_name,Basic Case,Granular case type name identifier
+type_name_1435,type_name,Basic Case,Granular case type name identifier
+type_name_1917,type_name,Basic Case,Granular case type name identifier
+type_name_1928,type_name,Basic Case,Granular case type name identifier
+type_name_1936,type_name,Basic Case,Granular case type name identifier
+type_name_3202,type_name,Basic Case,Granular case type name identifier
+type_name_2838,type_name,Basic Case,Granular case type name identifier
+type_name_2843,type_name,Basic Case,Granular case type name identifier
+type_name_2879,type_name,Basic Case,Granular case type name identifier
+type_name_2881,type_name,Basic Case,Granular case type name identifier
+type_name_3001,type_name,Basic Case,Granular case type name identifier
+type_name_3120,type_name,Basic Case,Granular case type name identifier
+type_name_3221,type_name,Basic Case,Granular case type name identifier
+type_name_2805,type_name,Basic Case,Granular case type name identifier
+type_name_3228,type_name,Basic Case,Granular case type name identifier
+type_name_3257,type_name,Basic Case,Granular case type name identifier
+type_name_3262,type_name,Basic Case,Granular case type name identifier
+type_name_3263,type_name,Basic Case,Granular case type name identifier
+type_name_3291,type_name,Basic Case,Granular case type name identifier
+type_name_3292,type_name,Basic Case,Granular case type name identifier
+type_name_2832,type_name,Basic Case,Granular case type name identifier
+type_name_2706,type_name,Basic Case,Granular case type name identifier
+type_name_1999,type_name,Basic Case,Granular case type name identifier
+type_name_2397,type_name,Basic Case,Granular case type name identifier
+type_name_2113,type_name,Basic Case,Granular case type name identifier
+type_name_2116,type_name,Basic Case,Granular case type name identifier
+type_name_2182,type_name,Basic Case,Granular case type name identifier
+type_name_2191,type_name,Basic Case,Granular case type name identifier
+type_name_2297,type_name,Basic Case,Granular case type name identifier
+type_name_2326,type_name,Basic Case,Granular case type name identifier
+type_name_2411,type_name,Basic Case,Granular case type name identifier
+type_name_2595,type_name,Basic Case,Granular case type name identifier
+type_name_2455,type_name,Basic Case,Granular case type name identifier
+type_name_2465,type_name,Basic Case,Granular case type name identifier
+type_name_2526,type_name,Basic Case,Granular case type name identifier
+type_name_2536,type_name,Basic Case,Granular case type name identifier
+type_name_2537,type_name,Basic Case,Granular case type name identifier
+type_name_2544,type_name,Basic Case,Granular case type name identifier
+type_name_5263,type_name,Basic Case,Granular case type name identifier
+type_name_5290,type_name,Basic Case,Granular case type name identifier
+case_type_str_money suit,case_type_str,Basic Case,Standardized case type string
+case_type_str_cr cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_elec,case_type_str,Basic Case,Standardized case type string
+case_type_str_elec.petn.,case_type_str,Basic Case,Standardized case type string
+case_type_str_election appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_ex a,case_type_str,Basic Case,Standardized case type string
+case_type_str_ex civil,case_type_str,Basic Case,Standardized case type string
+case_type_str_execution petition,case_type_str,Basic Case,Standardized case type string
+case_type_str_f.c.o.p,case_type_str,Basic Case,Standardized case type string
+case_type_str_fda,case_type_str,Basic Case,Standardized case type string
+case_type_str_final decree,case_type_str,Basic Case,Standardized case type string
+case_type_str_fr,case_type_str,Basic Case,Standardized case type string
+case_type_str_g. r. cases(n),case_type_str,Basic Case,Standardized case type string
+case_type_str_g.r,case_type_str,Basic Case,Standardized case type string
+case_type_str_gr case,case_type_str,Basic Case,Standardized case type string
+case_type_str_gr.pocso,case_type_str,Basic Case,Standardized case type string
+case_type_str_hindu marriage act,case_type_str,Basic Case,Standardized case type string
+case_type_str_ec-f,case_type_str,Basic Case,Standardized case type string
+case_type_str_dvc,case_type_str,Basic Case,Standardized case type string
+case_type_str_domestic violence act.,case_type_str,Basic Case,Standardized case type string
+case_type_str_crl. case,case_type_str,Basic Case,Standardized case type string
+case_type_str_cra,case_type_str,Basic Case,Standardized case type string
+case_type_str_cri case,case_type_str,Basic Case,Standardized case type string
+"case_type_str_cri. case, sadar",case_type_str,Basic Case,Standardized case type string
+case_type_str_cri.case,case_type_str,Basic Case,Standardized case type string
+case_type_str_criminal case,case_type_str,Basic Case,Standardized case type string
+case_type_str_crl .misc.,case_type_str,Basic Case,Standardized case type string
+case_type_str_crl.misc.,case_type_str,Basic Case,Standardized case type string
+case_type_str_declarative suits,case_type_str,Basic Case,Standardized case type string
+case_type_str_crl.r.p.,case_type_str,Basic Case,Standardized case type string
+case_type_str_crl.t.,case_type_str,Basic Case,Standardized case type string
+case_type_str_crlrp,case_type_str,Basic Case,Standardized case type string
+case_type_str_cro,case_type_str,Basic Case,Standardized case type string
+case_type_str_crra,case_type_str,Basic Case,Standardized case type string
+case_type_str_cs dj,case_type_str,Basic Case,Standardized case type string
+case_type_str_hindu marriage case,case_type_str,Basic Case,Standardized case type string
+case_type_str_hma,case_type_str,Basic Case,Standardized case type string
+case_type_str_hmp,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc crl case,case_type_str,Basic Case,Standardized case type string
+case_type_str_maintenance 125 crpc etc,case_type_str,Basic Case,Standardized case type string
+case_type_str_mcc ulp,case_type_str,Basic Case,Standardized case type string
+case_type_str_mcop,case_type_str,Basic Case,Standardized case type string
+case_type_str_mex,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc civil case,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc judicial case,case_type_str,Basic Case,Standardized case type string
+case_type_str_mact(injure,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc. appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc. case,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc. cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc. execution case,case_type_str,Basic Case,Standardized case type string
+case_type_str_misc.criminal cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_mjc gw,case_type_str,Basic Case,Standardized case type string
+case_type_str_maintenance,case_type_str,Basic Case,Standardized case type string
+case_type_str_mact claim case,case_type_str,Basic Case,Standardized case type string
+case_type_str_idact of s10 1d,case_type_str,Basic Case,Standardized case type string
+case_type_str_l.a.c.,case_type_str,Basic Case,Standardized case type string
+case_type_str_indian penal code (ipc),case_type_str,Basic Case,Standardized case type string
+case_type_str_injunction o-39  r1  2,case_type_str,Basic Case,Standardized case type string
+case_type_str_jda appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_judl (misc),case_type_str,Basic Case,Standardized case type string
+case_type_str_l a  case.,case_type_str,Basic Case,Standardized case type string
+case_type_str_l i r,case_type_str,Basic Case,Standardized case type string
+case_type_str_l.r.dkst.,case_type_str,Basic Case,Standardized case type string
+case_type_str_mact,case_type_str,Basic Case,Standardized case type string
+case_type_str_lac(appl),case_type_str,Basic Case,Standardized case type string
+case_type_str_m r case,case_type_str,Basic Case,Standardized case type string
+case_type_str_m.c.,case_type_str,Basic Case,Standardized case type string
+case_type_str_m.c.r,case_type_str,Basic Case,Standardized case type string
+case_type_str_m.j.cases,case_type_str,Basic Case,Standardized case type string
+case_type_str_m.v. act/ r.t.o. challan,case_type_str,Basic Case,Standardized case type string
+case_type_str_cr en,case_type_str,Basic Case,Standardized case type string
+case_type_str_cr,case_type_str,Basic Case,Standardized case type string
+type_name_5370,type_name,Basic Case,Granular case type name identifier
+case_type_str_complnt.case,case_type_str,Basic Case,Standardized case type string
+type_name_6117,type_name,Basic Case,Granular case type name identifier
+type_name_6118,type_name,Basic Case,Granular case type name identifier
+type_name_6160,type_name,Basic Case,Granular case type name identifier
+type_name_624,type_name,Basic Case,Granular case type name identifier
+type_name_6254,type_name,Basic Case,Granular case type name identifier
+type_name_6257,type_name,Basic Case,Granular case type name identifier
+type_name_6260,type_name,Basic Case,Granular case type name identifier
+type_name_6273,type_name,Basic Case,Granular case type name identifier
+type_name_6317,type_name,Basic Case,Granular case type name identifier
+type_name_6323,type_name,Basic Case,Granular case type name identifier
+type_name_6338,type_name,Basic Case,Granular case type name identifier
+type_name_636,type_name,Basic Case,Granular case type name identifier
+type_name_6437,type_name,Basic Case,Granular case type name identifier
+type_name_646,type_name,Basic Case,Granular case type name identifier
+type_name_6585,type_name,Basic Case,Granular case type name identifier
+type_name_6020,type_name,Basic Case,Granular case type name identifier
+type_name_6001,type_name,Basic Case,Granular case type name identifier
+type_name_5988,type_name,Basic Case,Granular case type name identifier
+type_name_5615,type_name,Basic Case,Granular case type name identifier
+type_name_5378,type_name,Basic Case,Granular case type name identifier
+type_name_5380,type_name,Basic Case,Granular case type name identifier
+type_name_5425,type_name,Basic Case,Granular case type name identifier
+type_name_5448,type_name,Basic Case,Granular case type name identifier
+type_name_5531,type_name,Basic Case,Granular case type name identifier
+type_name_5583,type_name,Basic Case,Granular case type name identifier
+type_name_567,type_name,Basic Case,Granular case type name identifier
+type_name_5985,type_name,Basic Case,Granular case type name identifier
+type_name_5737,type_name,Basic Case,Granular case type name identifier
+type_name_577,type_name,Basic Case,Granular case type name identifier
+type_name_5800,type_name,Basic Case,Granular case type name identifier
+type_name_5858,type_name,Basic Case,Granular case type name identifier
+type_name_5933,type_name,Basic Case,Granular case type name identifier
+type_name_5936,type_name,Basic Case,Granular case type name identifier
+type_name_6653,type_name,Basic Case,Granular case type name identifier
+type_name_6655,type_name,Basic Case,Granular case type name identifier
+type_name_6676,type_name,Basic Case,Granular case type name identifier
+case_type_str_civil regular appeal,case_type_str,Basic Case,Standardized case type string
+case_type_str_cases under section 125 cr p c,case_type_str,Basic Case,Standardized case type string
+case_type_str_cc,case_type_str,Basic Case,Standardized case type string
+case_type_str_cha,case_type_str,Basic Case,Standardized case type string
+case_type_str_challan (warrant trial),case_type_str,Basic Case,Standardized case type string
+case_type_str_civil misc appliacti,case_type_str,Basic Case,Standardized case type string
+case_type_str_civil misc. reg. 74,case_type_str,Basic Case,Standardized case type string
+case_type_str_civil reivision,case_type_str,Basic Case,Standardized case type string
+case_type_str_c.appln.,case_type_str,Basic Case,Standardized case type string
+case_type_str_civil suit,case_type_str,Basic Case,Standardized case type string
+case_type_str_cm-41,case_type_str,Basic Case,Standardized case type string
+case_type_str_cma,case_type_str,Basic Case,Standardized case type string
+case_type_str_cns,case_type_str,Basic Case,Standardized case type string
+case_type_str_complain,case_type_str,Basic Case,Standardized case type string
+case_type_str_complaint ulp1,case_type_str,Basic Case,Standardized case type string
+case_type_str_c.c.,case_type_str,Basic Case,Standardized case type string
+case_type_str_bail 439,case_type_str,Basic Case,Standardized case type string
+type_name_6704,type_name,Basic Case,Granular case type name identifier
+type_name_711,type_name,Basic Case,Granular case type name identifier
+type_name_6705,type_name,Basic Case,Granular case type name identifier
+type_name_6717,type_name,Basic Case,Granular case type name identifier
+type_name_683,type_name,Basic Case,Granular case type name identifier
+type_name_6940,type_name,Basic Case,Granular case type name identifier
+type_name_6982,type_name,Basic Case,Granular case type name identifier
+type_name_7059,type_name,Basic Case,Granular case type name identifier
+type_name_758,type_name,Basic Case,Granular case type name identifier
+case_type_str_ba,case_type_str,Basic Case,Standardized case type string
+type_name_927,type_name,Basic Case,Granular case type name identifier
+type_name_929,type_name,Basic Case,Granular case type name identifier
+case_type_str_arbitration case,case_type_str,Basic Case,Standardized case type string
+case_type_str_as,case_type_str,Basic Case,Standardized case type string
+case_type_str_atro.spl.case,case_type_str,Basic Case,Standardized case type string
+case_type_str_b a,case_type_str,Basic Case,Standardized case type string
+judge_gender_UNKNOWN,judge_gender,Judge,Judge gender

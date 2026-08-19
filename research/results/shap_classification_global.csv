@@ -1,0 +1,698 @@
+Feature,Mean_Absolute_SHAP
+case_type_str_cri.bail appln.,5.349577
+type_name_1689,2.077723
+ddl_filing_judge_id_350.0,1.0504669
+court_no_21,0.95772576
+ddl_filing_judge_id_298.0,0.8852161
+type_name_2594,0.8061243
+ddl_filing_judge_id_323.0,0.6779374
+type_name_3425,0.66365176
+ddl_filing_judge_id_326.0,0.65909004
+ddl_filing_judge_id_540.0,0.5804999
+court_str_CIVIL-CUM-CRIMINAL COURT BHADGAON,0.47879887
+type_name_4874,0.43995807
+case_type_str_macp. m.a.,0.43616015
+ddl_filing_judge_id_354.0,0.42814067
+type_name_6111,0.4059808
+ddl_filing_judge_id_331.0,0.40597424
+ddl_filing_judge_id_50.0,0.36118233
+type_name_2962,0.35063857
+court_no_2,0.33240116
+type_name_2817,0.3260621
+female_petitioner_clean_UNCLEAR,0.31456816
+court_no_3,0.3129747
+ddl_filing_judge_id_605.0,0.3128678
+female_defendant_clean_UNCLEAR,0.30580378
+court_prior_active_backlog,0.2965634
+case_type_str_m.a.n.r.j.i.,0.27451017
+dist_code_1,0.25046977
+case_type_str_m.c.a.,0.2474186
+ddl_filing_judge_id_1014.0,0.24708393
+filing_month,0.2441811
+female_adv_def_clean_0,0.23584114
+court_no_9,0.21685983
+court_no_19,0.19068581
+female_defendant_clean_FEMALE,0.17898889
+case_type_str_r.c.a.,0.17871238
+type_name_4016,0.17386466
+case_type_str_spl case mseb,0.16493464
+type_name_4563,0.16236736
+female_defendant_clean_MALE,0.1583494
+case_type_str_cri.m.a.,0.15580839
+ddl_filing_judge_id_215.0,0.15562673
+dist_code_2,0.15537794
+court_str_Civil Court J.D. Shindkheda,0.15410586
+type_name_6143,0.14812331
+ddl_filing_judge_id_252.0,0.14327696
+court_str_Civil Court Senior Division Nandurbar,0.14021845
+type_name_3020,0.13079405
+case_type_str_marriage petn.,0.12859285
+type_name_2312,0.127655
+case_type_str_cri.appeal,0.1270065
+court_no_14,0.12672624
+type_name_5272,0.12600382
+ddl_filing_judge_id_1125.0,0.12560597
+type_name_3784,0.1248956
+type_name_1441,0.121976145
+type_name_5039,0.12108069
+ddl_filing_judge_id_609.0,0.120444395
+court_no_15,0.11815662
+case_type_str_m.a.c.p.,0.11772142
+female_petitioner_clean_FEMALE,0.117083095
+type_name_2992,0.11708251
+female_adv_pet_clean_1,0.115853615
+court_prior_delay_rate,0.115082115
+casetype_prior_delay_rate,0.11387567
+female_defendant_clean_MISSING,0.11359556
+case_type_str_l.a.r.,0.113148294
+type_name_6199,0.11210583
+ddl_filing_judge_id_1056.0,0.11178964
+type_name_4626,0.11140972
+type_name_1924,0.107626796
+case_category_Other/Unknown/Unclassified,0.10553967
+case_category_High-Confidence Criminal,0.10398694
+case_type_str_reg dkst,0.10376864
+type_name_1907,0.10252784
+type_name_4827,0.10189866
+court_prior_avg_duration,0.09994272
+type_name_5506,0.094202034
+ddl_filing_judge_id_217.0,0.09381014
+type_name_3786,0.09286854
+type_name_5846,0.091499746
+court_no_11,0.09121767
+female_adv_pet_clean_0,0.09083917
+type_name_5197,0.08949463
+filing_day_of_week,0.08918228
+judge_gender_1 female,0.08639372
+female_adv_pet_clean_-2,0.08480925
+type_name_2587,0.08399057
+female_adv_def_clean_-2,0.08395427
+court_no_7,0.080109626
+type_name_4157,0.07986719
+female_adv_def_clean_1,0.07859698
+type_name_1423,0.07630053
+type_name_2765,0.07564377
+case_type_str_r.c.c.,0.07562146
+case_type_str_darkhast,0.07554237
+court_str_CIVIL CUM CRIMINAL COURT BHUSAWAL,0.07495335
+type_name_4400,0.07304761
+court_no_18,0.07089977
+case_type_str_civil m.a.,0.06687679
+type_name_3633,0.065157734
+type_name_1696,0.061325636
+judge_position_clean_civil_judge_junior,0.06119631
+court_str_CIVIL COURT SR.DIVN. AMALNER,0.057445332
+type_name_1429,0.056909345
+court_no_4,0.055713005
+court_str_Civil Court J.D. Shirpur,0.05484217
+court_no_13,0.053889263
+type_name_5367,0.053082604
+type_name_3674,0.05299403
+ddl_filing_judge_id_178.0,0.049704224
+case_type_str_cri.rev.app.,0.049268022
+case_type_str_juvenile,0.049192544
+case_type_str_r.c.s.,0.04738808
+judge_position_clean_civil_judge_senior,0.045529027
+court_str_Chief Judcial Magistrate Nandurbar,0.042864908
+type_name_5502,0.041278213
+type_name_5034,0.040645882
+female_petitioner_clean_MALE,0.03969418
+type_name_3432,0.038903132
+type_name_3510,0.037948925
+type_name_4636,0.036833376
+court_no_12,0.03642785
+ddl_filing_judge_id_602.0,0.035966396
+court_no_5,0.034600444
+ddl_filing_judge_id_92.0,0.034177616
+case_type_str_macp. dkst.,0.034129772
+court_no_6,0.033591535
+case_type_str_spl .dkst,0.033522606
+case_type_str_s.c.c.,0.03336137
+judge_position_clean_district_and_sessions,0.03273474
+type_name_4025,0.031500403
+judge_tenure_days,0.030120414
+"court_str_Civil Court, J.D. and J.M.F.C., Nawapur.",0.029700149
+type_name_5274,0.02899624
+type_name_2938,0.028398136
+female_adv_def_clean_-1,0.028391615
+type_name_5238,0.0277073
+type_name_4018,0.027257074
+court_no_17,0.027003989
+judge_position_clean_chief_judicial_magistrate,0.02651405
+court_str_Civil Court J.D. and J.M.F.C.Taloda,0.026166692
+case_category_High-Confidence Civil,0.025421575
+type_name_5245,0.024784422
+case_type_str_spl.c.s.,0.024184115
+court_str_CIVIL-CUM-CRIMINAL COURT DHARANGAON,0.02401431
+type_name_947,0.023287786
+"court_str_DISTRICT AND SESSIONS COURT, NANDURBAR",0.022705346
+female_adv_pet_clean_-1,0.022392135
+court_str_Additional District  And Sessions Court Shahada,0.022114998
+"court_str_CHIEF JUDICIAL MAGISTRATE, JALGAON",0.022003643
+court_no_8,0.021695858
+ddl_filing_judge_id_320.0,0.021418821
+type_name_5698,0.020722546
+type_name_4628,0.020538041
+type_name_4051,0.020472748
+type_name_5487,0.019416586
+dist_code_4,0.019400163
+type_name_1048,0.019090759
+court_no_1,0.018458964
+case_type_str_sessions case,0.018346183
+type_name_790,0.018174727
+"court_str_DISTRICT AND SESSIONS COURT, DHULE",0.016458971
+court_str_Jt. Civil Court J.D. and J.M.F.C. Shahada,0.015767604
+ddl_filing_judge_id_277.0,0.01572652
+type_name_4770,0.015457202
+type_name_3242,0.0153580215
+type_name_5036,0.01420136
+dist_code_3,0.012837864
+type_name_2786,0.012810132
+type_name_5736,0.011060443
+"court_str_Civil Court J.D. and J.M.F.C., Dondaicha",0.010811959
+type_name_6320,0.010736502
+type_name_6315,0.010587586
+type_name_5905,0.010461087
+type_name_3284,0.009144283
+judge_gender_0 nonfemale,0.009031694
+type_name_5394,0.008102814
+ddl_filing_judge_id_1113.0,0.007902896
+type_name_6097,0.0076063154
+ddl_filing_judge_id_371.0,0.0072237784
+"court_str_DISTRICT COURT 1 AND ADDL. SESSIONS COURT, AMALNER",0.0071810693
+"court_str_CIVIL COURT SENIOR DIVISION, DHULE",0.0071803657
+type_name_1919,0.0069903685
+type_name_2201,0.0069798552
+"court_str_CHIEF JUDICIAL MAGISTRATE COURT, DHULE",0.0068977484
+type_name_3649,0.005189959
+court_str_JUDICIAL MAGISTRATE F C RLY BHUSAWAL,0.005107648
+"court_str_DISTRICT COURT, BULDANA",0.0043612914
+court_str_CIVIL COURT SENIOR DIVISION JALGAON,0.004203396
+type_name_1842,0.004196109
+type_name_4709,0.004190792
+statutory_act_count,0.0041416823
+type_name_3885,0.003953119
+type_name_3555,0.003119574
+type_name_3437,0.003100381
+type_name_5503,0.0029285252
+court_str_DISTRICT AND SESSIONS COURT JALGAON,0.002751743
+type_name_5236,0.0026910522
+type_name_1683,0.0025872884
+type_name_5984,0.0023353861
+judge_position_clean_civil_court,0.0022487182
+ddl_filing_judge_id_204.0,0.0021413628
+type_name_3508,0.0021124189
+ddl_filing_judge_id_280.0,0.0020796359
+court_no_10,0.001914118
+type_name_5424,0.0018446188
+ddl_filing_judge_id_250.0,0.0017645209
+court_str_Civil  Court J.D. Sakri,0.0017644039
+court_no_16,0.0016359873
+ddl_filing_judge_id_1005.0,0.0012762656
+type_name_2880,0.0011898584
+court_str_JUDICIAL MAGISTRATE F.C.AMALNER,0.0010957005
+ddl_filing_judge_id_161.0,0.0010760478
+type_name_1036,0.0010450578
+judge_position_clean_other,0.0010268277
+court_str_Civil Court S.D. Shahada,0.0009908299
+ipc_section_count,0.0009278511
+type_name_6253,0.00078719255
+type_name_3651,0.0006868829
+type_name_1862,0.0006479493
+ddl_filing_judge_id_240.0,0.00063640735
+type_name_5282,0.0005939797
+type_name_1673,0.0005173694
+type_name_5044,0.00044265113
+ddl_filing_judge_id_150.0,0.00040662684
+type_name_1849,0.00023783279
+"court_str_Civil Court J.D. and J.M.F.C., Akkalkuwa",0.00018902658
+type_name_3726,0.00014464086
+type_name_2401,7.348492e-05
+type_name_5682,8.84934e-06
+primary_act_id_4759.0,0.0
+case_type_str_spl. marriage petn.,0.0
+ddl_filing_judge_id_75.0,0.0
+primary_act_id_17353.0,0.0
+ddl_filing_judge_id_550.0,0.0
+bailable_ipc_flag_-1,0.0
+case_type_str_spl.case,0.0
+is_criminal_code_1,0.0
+is_criminal_code_0,0.0
+is_criminal_code_-1,0.0
+ddl_filing_judge_id_787.0,0.0
+case_type_str_spl.case child prot.,0.0
+case_type_str_spl.cri.m.a.,0.0
+primary_act_id_missing,0.0
+ddl_filing_judge_id_526.0,0.0
+case_type_str_uc,0.0
+case_type_str_st,0.0
+ddl_filing_judge_id_551.0,0.0
+case_type_str_u.i case,0.0
+ddl_filing_judge_id_74.0,0.0
+case_type_str_succession case,0.0
+case_type_str_sum.civ.suit,0.0
+case_category_Ambiguous/Mixed,0.0
+case_type_str_summary trial,0.0
+case_type_str_summon case,0.0
+case_type_str_warrant,0.0
+case_type_str_w.c.f.a.case,0.0
+case_type_str_summons for judgt,0.0
+case_type_str_ucr,0.0
+case_type_str_spl. case (excise),0.0
+case_type_str_title appeal,0.0
+case_type_str_stay application,0.0
+ddl_filing_judge_id_1138.0,0.0
+ddl_filing_judge_id_845.0,0.0
+judge_position_clean_judicial_magistrate,0.0
+case_type_str_probate,0.0
+case_type_str_private complaint,0.0
+case_type_str_prc sp,0.0
+case_type_str_police challan (summon trial),0.0
+case_type_str_police cases w,0.0
+case_type_str_police cases pw,0.0
+case_type_str_police cases ps,0.0
+case_type_str_petty cases,0.0
+case_type_str_petition a,0.0
+case_type_str_pcso,0.0
+case_type_str_p w case,0.0
+case_type_str_p  and  sc,0.0
+case_type_str_other misc.cri.appln,0.0
+case_type_str_other misc.appln.,0.0
+case_type_str_original suit,0.0
+case_type_str_original civil suits 17,0.0
+case_type_str_original civil suits,0.0
+case_type_str_ndps. s. case,0.0
+case_type_str_nact,0.0
+case_type_str_munci. appeal,0.0
+case_type_str_mseb ma,0.0
+case_type_str_pwdva appln.,0.0
+judge_position_clean_addl_district_sessions,0.0
+case_type_str_special sessions cases,0.0
+ddl_filing_judge_id_missing,0.0
+case_type_str_special court cases,0.0
+case_type_str_spcs el,0.0
+case_type_str_smst r,0.0
+case_type_str_sessions trial(n),0.0
+case_type_str_sessions case type 1,0.0
+ddl_filing_judge_id_846.0,0.0
+case_type_str_session trial,0.0
+case_type_str_session case old,0.0
+case_type_str_scc suit,0.0
+case_type_str_sc doct,0.0
+case_type_str_s.t.,0.0
+ddl_filing_judge_id_52.0,0.0
+ddl_filing_judge_id_93.0,0.0
+case_type_str_regular suit,0.0
+ddl_filing_judge_id_932.0,0.0
+ddl_filing_judge_id_933.0,0.0
+case_type_str_rcr,0.0
+case_type_str_rca dj,0.0
+case_type_str_rca,0.0
+ddl_filing_judge_id_96.0,0.0
+case_type_str_r.cri. case,0.0
+ddl_filing_judge_id_523.0,0.0
+ddl_filing_judge_id_38.0,0.0
+ddl_filing_judge_id_516.0,0.0
+court_str_CIVIL-CUM-CRIMINAL COURT CHALISGAON,0.0
+ddl_filing_judge_id_162.0,0.0
+"court_str_Civil Court Senior Division, Bhusawal",0.0
+ddl_filing_judge_id_163.0,0.0
+ddl_filing_judge_id_205.0,0.0
+ddl_filing_judge_id_216.0,0.0
+ddl_filing_judge_id_239.0,0.0
+court_str_CIVIL-CUM-CRIMINAL COURT PACHORA,0.0
+court_str_CIVIL-CUM-CRIMINAL COURT JAMNER,0.0
+ddl_filing_judge_id_251.0,0.0
+court_str_CIVIL CUM CRIMINAL COURT YAWAL,0.0
+ddl_filing_judge_id_51.0,0.0
+ddl_filing_judge_id_268.0,0.0
+ddl_filing_judge_id_278.0,0.0
+court_str_CIVIL CUM CRIMINAL COURT PAROLA,0.0
+court_str_CIVIL CUM CRIMINAL COURT MUKTAINAGAR,0.0
+court_str_CIVIL CUM CRIMINAL COURT ERANDOL,0.0
+ddl_filing_judge_id_279.0,0.0
+court_str_CIVIL CUM CRIMINAL  COURT CHOPDA,0.0
+ddl_filing_judge_id_297.0,0.0
+ddl_filing_judge_id_299.0,0.0
+case_type_str_motor vehicle act,0.0
+ddl_filing_judge_id_155.0,0.0
+ddl_filing_judge_id_154.0,0.0
+"court_str_District and Additional Session Court, Bhusawal",0.0
+ddl_filing_judge_id_1135.0,0.0
+ddl_filing_judge_id_1129.0,0.0
+ddl_filing_judge_id_114.0,0.0
+ddl_filing_judge_id_117.0,0.0
+ddl_filing_judge_id_1115.0,0.0
+ddl_filing_judge_id_1114.0,0.0
+ddl_filing_judge_id_1101.0,0.0
+ddl_filing_judge_id_127.0,0.0
+ddl_filing_judge_id_132.0,0.0
+ddl_filing_judge_id_1057.0,0.0
+ddl_filing_judge_id_134.0,0.0
+ddl_filing_judge_id_137.0,0.0
+ddl_filing_judge_id_103.0,0.0
+ddl_filing_judge_id_1015.0,0.0
+ddl_filing_judge_id_145.0,0.0
+ddl_filing_judge_id_1004.0,0.0
+ddl_filing_judge_id_147.0,0.0
+ddl_filing_judge_id_148.0,0.0
+ddl_filing_judge_id_149.0,0.0
+court_str_CIVIL COURT SENIOR DIVISION CHALISGAON,0.0
+court_str_CIVIL AND CRIMINAL COURT RAVER,0.0
+ddl_filing_judge_id_3.0,0.0
+ddl_filing_judge_id_366.0,0.0
+ddl_filing_judge_id_1137.0,0.0
+ddl_filing_judge_id_380.0,0.0
+ddl_filing_judge_id_381.0,0.0
+ddl_filing_judge_id_382.0,0.0
+ddl_filing_judge_id_39.0,0.0
+ddl_filing_judge_id_399.0,0.0
+ddl_filing_judge_id_400.0,0.0
+state_code_1,0.0
+ddl_filing_judge_id_401.0,0.0
+ddl_filing_judge_id_402.0,0.0
+ddl_filing_judge_id_411.0,0.0
+ddl_filing_judge_id_429.0,0.0
+ddl_filing_judge_id_430.0,0.0
+ddl_filing_judge_id_431.0,0.0
+ddl_filing_judge_id_432.0,0.0
+ddl_filing_judge_id_460.0,0.0
+ddl_filing_judge_id_480.0,0.0
+female_petitioner_clean_MISSING,0.0
+ddl_filing_judge_id_497.0,0.0
+ddl_filing_judge_id_372.0,0.0
+ddl_filing_judge_id_356.0,0.0
+court_str_CHIEF JUDICIAL MAGISTRATE BULDANA.,0.0
+ddl_filing_judge_id_353.0,0.0
+"court_str_C.J.J.D. AND J.M.F.C., DHADGAON/AKRANI",0.0
+ddl_filing_judge_id_300.0,0.0
+ddl_filing_judge_id_301.0,0.0
+district_str_Nandurbar,0.0
+ddl_filing_judge_id_311.0,0.0
+district_str_Jalgaon,0.0
+ddl_filing_judge_id_321.0,0.0
+district_str_Dhule,0.0
+district_str_Buldhana,0.0
+state_str_Maharashtra,0.0
+ddl_filing_judge_id_324.0,0.0
+ddl_filing_judge_id_325.0,0.0
+ddl_filing_judge_id_332.0,0.0
+ddl_filing_judge_id_333.0,0.0
+ddl_filing_judge_id_338.0,0.0
+court_no_22,0.0
+ddl_filing_judge_id_351.0,0.0
+court_no_20,0.0
+ddl_filing_judge_id_352.0,0.0
+case_type_str_mp,0.0
+case_type_str_execution,0.0
+case_type_str_motor vehicle  act,0.0
+type_name_3324,0.0
+type_name_3780,0.0
+type_name_3783,0.0
+type_name_3785,0.0
+type_name_3792,0.0
+type_name_3810,0.0
+type_name_3881,0.0
+type_name_3941,0.0
+type_name_3952,0.0
+type_name_3955,0.0
+type_name_3957,0.0
+type_name_3974,0.0
+type_name_4027,0.0
+type_name_4043,0.0
+type_name_4120,0.0
+type_name_4130,0.0
+type_name_3711,0.0
+type_name_3710,0.0
+type_name_3698,0.0
+type_name_3472,0.0
+type_name_3375,0.0
+type_name_3377,0.0
+type_name_3383,0.0
+type_name_3414,0.0
+type_name_3433,0.0
+type_name_3434,0.0
+type_name_3483,0.0
+type_name_3696,0.0
+type_name_3490,0.0
+type_name_3530,0.0
+type_name_3569,0.0
+type_name_3575,0.0
+type_name_3634,0.0
+type_name_3670,0.0
+type_name_4298,0.0
+type_name_4299,0.0
+type_name_4306,0.0
+type_name_5089,0.0
+type_name_4873,0.0
+type_name_4903,0.0
+type_name_4904,0.0
+type_name_4938,0.0
+type_name_4942,0.0
+type_name_4968,0.0
+type_name_5090,0.0
+type_name_4828,0.0
+type_name_5174,0.0
+type_name_5183,0.0
+type_name_5208,0.0
+type_name_5212,0.0
+type_name_5251,0.0
+type_name_5252,0.0
+type_name_4831,0.0
+type_name_479,0.0
+type_name_4427,0.0
+type_name_4612,0.0
+type_name_4434,0.0
+type_name_448,0.0
+type_name_4518,0.0
+type_name_4570,0.0
+type_name_4607,0.0
+type_name_4609,0.0
+type_name_4630,0.0
+type_name_4784,0.0
+type_name_4635,0.0
+type_name_4674,0.0
+type_name_4675,0.0
+type_name_4703,0.0
+type_name_4721,0.0
+type_name_4725,0.0
+type_name_3369,0.0
+type_name_3323,0.0
+type_name_5288,0.0
+type_name_3322,0.0
+type_name_1676,0.0
+type_name_1678,0.0
+type_name_1704,0.0
+type_name_1736,0.0
+type_name_1844,0.0
+type_name_1845,0.0
+type_name_1857,0.0
+type_name_1864,0.0
+type_name_1869,0.0
+type_name_1903,0.0
+type_name_1904,0.0
+type_name_1905,0.0
+type_name_1913,0.0
+type_name_1914,0.0
+type_name_1916,0.0
+type_name_1645,0.0
+type_name_1633,0.0
+type_name_1590,0.0
+type_name_1217,0.0
+filing_quarter,0.0
+type_name_1000,0.0
+type_name_1068,0.0
+type_name_1101,0.0
+type_name_1105,0.0
+type_name_1212,0.0
+type_name_1228,0.0
+type_name_1447,0.0
+type_name_1247,0.0
+type_name_1250,0.0
+type_name_1259,0.0
+type_name_1425,0.0
+type_name_1426,0.0
+type_name_1435,0.0
+type_name_1917,0.0
+type_name_1928,0.0
+type_name_1936,0.0
+type_name_3202,0.0
+type_name_2838,0.0
+type_name_2843,0.0
+type_name_2879,0.0
+type_name_2881,0.0
+type_name_3001,0.0
+type_name_3120,0.0
+type_name_3221,0.0
+type_name_2805,0.0
+type_name_3228,0.0
+type_name_3257,0.0
+type_name_3262,0.0
+type_name_3263,0.0
+type_name_3291,0.0
+type_name_3292,0.0
+type_name_2832,0.0
+type_name_2706,0.0
+type_name_1999,0.0
+type_name_2397,0.0
+type_name_2113,0.0
+type_name_2116,0.0
+type_name_2182,0.0
+type_name_2191,0.0
+type_name_2297,0.0
+type_name_2326,0.0
+type_name_2411,0.0
+type_name_2595,0.0
+type_name_2455,0.0
+type_name_2465,0.0
+type_name_2526,0.0
+type_name_2536,0.0
+type_name_2537,0.0
+type_name_2544,0.0
+type_name_5263,0.0
+type_name_5290,0.0
+case_type_str_money suit,0.0
+case_type_str_cr cases,0.0
+case_type_str_elec,0.0
+case_type_str_elec.petn.,0.0
+case_type_str_election appeal,0.0
+case_type_str_ex a,0.0
+case_type_str_ex civil,0.0
+case_type_str_execution petition,0.0
+case_type_str_f.c.o.p,0.0
+case_type_str_fda,0.0
+case_type_str_final decree,0.0
+case_type_str_fr,0.0
+case_type_str_g. r. cases(n),0.0
+case_type_str_g.r,0.0
+case_type_str_gr case,0.0
+case_type_str_gr.pocso,0.0
+case_type_str_hindu marriage act,0.0
+case_type_str_ec-f,0.0
+case_type_str_dvc,0.0
+case_type_str_domestic violence act.,0.0
+case_type_str_crl. case,0.0
+case_type_str_cra,0.0
+case_type_str_cri case,0.0
+"case_type_str_cri. case, sadar",0.0
+case_type_str_cri.case,0.0
+case_type_str_criminal case,0.0
+case_type_str_crl .misc.,0.0
+case_type_str_crl.misc.,0.0
+case_type_str_declarative suits,0.0
+case_type_str_crl.r.p.,0.0
+case_type_str_crl.t.,0.0
+case_type_str_crlrp,0.0
+case_type_str_cro,0.0
+case_type_str_crra,0.0
+case_type_str_cs dj,0.0
+case_type_str_hindu marriage case,0.0
+case_type_str_hma,0.0
+case_type_str_hmp,0.0
+case_type_str_misc crl case,0.0
+case_type_str_maintenance 125 crpc etc,0.0
+case_type_str_mcc ulp,0.0
+case_type_str_mcop,0.0
+case_type_str_mex,0.0
+case_type_str_misc,0.0
+case_type_str_misc civil case,0.0
+case_type_str_misc judicial case,0.0
+case_type_str_mact(injure,0.0
+case_type_str_misc. appeal,0.0
+case_type_str_misc. case,0.0
+case_type_str_misc. cases,0.0
+case_type_str_misc. execution case,0.0
+case_type_str_misc.criminal cases,0.0
+case_type_str_mjc gw,0.0
+case_type_str_maintenance,0.0
+case_type_str_mact claim case,0.0
+case_type_str_idact of s10 1d,0.0
+case_type_str_l.a.c.,0.0
+case_type_str_indian penal code (ipc),0.0
+case_type_str_injunction o-39  r1  2,0.0
+case_type_str_jda appeal,0.0
+case_type_str_judl (misc),0.0
+case_type_str_l a  case.,0.0
+case_type_str_l i r,0.0
+case_type_str_l.r.dkst.,0.0
+case_type_str_mact,0.0
+case_type_str_lac(appl),0.0
+case_type_str_m r case,0.0
+case_type_str_m.c.,0.0
+case_type_str_m.c.r,0.0
+case_type_str_m.j.cases,0.0
+case_type_str_m.v. act/ r.t.o. challan,0.0
+case_type_str_cr en,0.0
+case_type_str_cr,0.0
+type_name_5370,0.0
+case_type_str_complnt.case,0.0
+type_name_6117,0.0
+type_name_6118,0.0
+type_name_6160,0.0
+type_name_624,0.0
+type_name_6254,0.0
+type_name_6257,0.0
+type_name_6260,0.0
+type_name_6273,0.0
+type_name_6317,0.0
+type_name_6323,0.0
+type_name_6338,0.0
+type_name_636,0.0
+type_name_6437,0.0
+type_name_646,0.0
+type_name_6585,0.0
+type_name_6020,0.0
+type_name_6001,0.0
+type_name_5988,0.0
+type_name_5615,0.0
+type_name_5378,0.0
+type_name_5380,0.0
+type_name_5425,0.0
+type_name_5448,0.0
+type_name_5531,0.0
+type_name_5583,0.0
+type_name_567,0.0
+type_name_5985,0.0
+type_name_5737,0.0
+type_name_577,0.0
+type_name_5800,0.0
+type_name_5858,0.0
+type_name_5933,0.0
+type_name_5936,0.0
+type_name_6653,0.0
+type_name_6655,0.0
+type_name_6676,0.0
+case_type_str_civil regular appeal,0.0
+case_type_str_cases under section 125 cr p c,0.0
+case_type_str_cc,0.0
+case_type_str_cha,0.0
+case_type_str_challan (warrant trial),0.0
+case_type_str_civil misc appliacti,0.0
+case_type_str_civil misc. reg. 74,0.0
+case_type_str_civil reivision,0.0
+case_type_str_c.appln.,0.0
+case_type_str_civil suit,0.0
+case_type_str_cm-41,0.0
+case_type_str_cma,0.0
+case_type_str_cns,0.0
+case_type_str_complain,0.0
+case_type_str_complaint ulp1,0.0
+case_type_str_c.c.,0.0
+case_type_str_bail 439,0.0
+type_name_6704,0.0
+type_name_711,0.0
+type_name_6705,0.0
+type_name_6717,0.0
+type_name_683,0.0
+type_name_6940,0.0
+type_name_6982,0.0
+type_name_7059,0.0
+type_name_758,0.0
+case_type_str_ba,0.0
+type_name_927,0.0
+type_name_929,0.0
+case_type_str_arbitration case,0.0
+case_type_str_as,0.0
+case_type_str_atro.spl.case,0.0
+case_type_str_b a,0.0
+judge_gender_UNKNOWN,0.0

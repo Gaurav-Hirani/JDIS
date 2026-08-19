@@ -1,0 +1,30 @@
+feature_group,parent_feature,human_readable_description,mean_absolute_shap
+Basic Case,type_name,Granular case type name identifier,8.69601179829
+Basic Case,case_type_str,Standardized case type string,7.904792346
+Judge,ddl_filing_judge_id,Filing judge identifier,6.5405142635899995
+Court,court_no,Numeric court identifier,2.7826881993
+Court,court_str,Court establishment name string,1.23469583468
+Basic Case,female_defendant_clean,Indicator for female defendant presence,0.75673763
+Basic Case,female_petitioner_clean,Indicator for female petitioner presence,0.471345435
+Court,dist_code,District code identifier,0.438085737
+Basic Case,female_adv_def_clean,Indicator for female defense advocate,0.426784005
+Basic Case,female_adv_pet_clean,Indicator for female petitioner advocate,0.31389417
+Historical,court_prior_active_backlog,Active backlog count of the court at filing,0.2965634
+Basic Case,filing_month,Month of case filing,0.2441811
+Basic Case,case_category,Case category ID,0.234948185
+Judge,judge_position_clean,Standardized judge position,0.1692496729
+Historical,court_prior_delay_rate,Historical delay rate of the court at filing,0.115082115
+Historical,casetype_prior_delay_rate,Historical delay rate for the specific case type,0.11387567
+Historical,court_prior_avg_duration,Historical average duration of the court at filing,0.09994272
+Judge,judge_gender,Judge gender,0.09542541399999999
+Basic Case,filing_day_of_week,Day of the week of case filing,0.08918228
+Judge,judge_tenure_days,Judge tenure duration at filing,0.030120414
+Basic Case,statutory_act_count,Number of statutory acts involved,0.0041416823
+Basic Case,ipc_section_count,Number of IPC sections cited,0.0009278511
+Court,state_str,State name string,0.0
+Court,state_code,State code identifier,0.0
+Court,district_str,District name string,0.0
+Basic Case,primary_act_id,Primary statutory act ID,0.0
+Basic Case,is_criminal_code,"Civil vs Criminal code (1=Criminal, 0=Civil)",0.0
+Basic Case,filing_quarter,Quarter of case filing,0.0
+Basic Case,bailable_ipc_flag,Indicator if IPC sections are bailable,0.0

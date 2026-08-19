@@ -1,0 +1,4 @@
+Strategy Name,Target,Train Window,Validation Window,Test Window,Reasoning
+Strict Fully Observable Split,24-month delay,2010-2014,2015,2016,Stops at 2016 to guarantee ~100% 24m observability for all sets. Drops heavily censored 2017/2018.
+Maximal Recent Split (Imputed),24-month delay,2010-2015,2016,2017,"Uses 2017 for test, but requires dropping the 13k UNKNOWN cases in 2017. Preserves timeline proximity to modern data."
+Duration Regression Split,Exact Duration,2010-2015,2016,2017,"Only uses resolved cases. 2017 is test set. 2018 has <52% resolved, too skewed to be a reliable final test set."

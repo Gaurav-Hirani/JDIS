@@ -47,6 +47,8 @@ data/features/*
 # Model artifacts
 models/*.pkl
 models/*.joblib
+!models/final_calibrated_clf.joblib
+!models/best_ablation_reg.joblib
 models/*.h5
 models/*.keras
 models/*.pt

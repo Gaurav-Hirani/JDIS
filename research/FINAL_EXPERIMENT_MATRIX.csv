@@ -1,0 +1,5 @@
+experiment_id,task,dataset,prediction_point,target,feature_config,train_period,validation_period,test_period,selected_model,primary_metric,validation_value,test_value,status
+CLS-ADV-001,Classification,filing_classification_24m_final.parquet,T_filing,delay_24m,Config D,2010-2014,2015,2016,XGBoost,ROC-AUC,0.7964,0.7938,FINAL
+REG-ADV-001,Regression,filing_regression_final.parquet,T_filing,case_duration_days,Config D,2010-2014,2015,2016,XGBoost,MAE,294.43,262.88,FINAL
+HEAR-ADV-001,Regression,hearing_features.parquet,T_last_list,next_listing_gap_days,Config D,<=2017,2018,2019,Random Forest,R2,-0.2112,-1.7032,FINAL_NEGATIVE
+CLS-BASE-001,Classification,filing_classification_24m_final.parquet,T_filing,delay_24m,Config D,2010-2014,2015,2016,Logistic Regression,ROC-AUC,0.7259,0.7262,FINAL_BASELINE
