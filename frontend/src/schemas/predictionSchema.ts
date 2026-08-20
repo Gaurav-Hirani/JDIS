@@ -1,0 +1,158 @@
+import { z } from 'zod';
+
+export const predictionFormSchema = z.object({
+  // Required string fields per contract
+  state_code: z.string().min(1, 'State code is required'),
+  dist_code: z.string().min(1, 'District code is required'),
+  court_no: z.string().min(1, 'Court number is required'),
+  type_name: z.string().min(1, 'Case type name is required'),
+
+  // Temporal Metadata
+  filing_month: z.coerce.number().int().min(1, 'Month must be 1-12').max(12, 'Month must be 1-12').default(1),
+  filing_day_of_week: z.coerce.number().int().min(0, 'Day of week must be 0-6').max(6, 'Day of week must be 0-6').default(1),
+  filing_quarter: z.coerce.number().int().min(1, 'Quarter must be 1-4').max(4, 'Quarter must be 1-4').default(1),
+
+  // Case Classification
+  case_type_str: z.string().default('criminal'),
+  case_category: z.string().default('criminal'),
+  is_criminal_code: z.coerce.number().int().min(0).max(1).default(1),
+
+  // Statutory Details
+  statutory_act_count: z.coerce.number().int().min(0, 'Must be 0 or greater').default(1),
+  ipc_section_count: z.coerce.number().int().min(0, 'Must be 0 or greater').default(1),
+  bailable_ipc_flag: z.string().default('bailable'),
+  primary_act_id: z.string().default('act_ipc'),
+
+  // Demographics & Legal Counsel
+  female_defendant_clean: z.string().default('0'),
+  female_petitioner_clean: z.string().default('0'),
+  female_adv_def_clean: z.string().default('0'),
+  female_adv_pet_clean: z.string().default('0'),
+
+  // Geographical & Court Labels
+  state_str: z.string().default('Maharashtra'),
+  district_str: z.string().default('Mumbai'),
+  court_str: z.string().default('Chief Metropolitan Magistrate'),
+
+  // Judicial Attributes
+  ddl_filing_judge_id: z.string().default('judge_101'),
+  judge_position_clean: z.string().default('magistrate'),
+  judge_gender: z.string().default('male'),
+  judge_tenure_days: z.coerce.number().min(0, 'Tenure days must be non-negative').default(365),
+
+  // Historical Court Throughput Metrics
+  court_prior_delay_rate: z.coerce.number().min(0).max(1, 'Rate must be between 0.0 and 1.0').default(0.45),
+  court_prior_avg_duration: z.coerce.number().min(0, 'Must be non-negative').default(500),
+  court_prior_active_backlog: z.coerce.number().min(0, 'Must be non-negative').default(1200),
+  casetype_prior_delay_rate: z.coerce.number().min(0).max(1, 'Rate must be between 0.0 and 1.0').default(0.40),
+});
+
+export type PredictionFormValues = z.infer<typeof predictionFormSchema>;
+
+export const SAMPLE_PRESET_CASES: { label: string; description: string; values: PredictionFormValues }[] = [
+  {
+    label: 'High Risk Criminal Appeal (Complex Jurisdiction)',
+    description: 'High prior delay rate, complex case type, multi-section IPC filing',
+    values: {
+      state_code: '01',
+      dist_code: '01',
+      court_no: '01',
+      type_name: 'criminal appeal',
+      filing_month: 5,
+      filing_day_of_week: 2,
+      filing_quarter: 2,
+      case_type_str: 'criminal',
+      case_category: 'criminal',
+      is_criminal_code: 1,
+      statutory_act_count: 3,
+      ipc_section_count: 5,
+      bailable_ipc_flag: 'non-bailable',
+      primary_act_id: 'act_ipc',
+      female_defendant_clean: '0',
+      female_petitioner_clean: '0',
+      female_adv_def_clean: '0',
+      female_adv_pet_clean: '0',
+      state_str: 'Maharashtra',
+      district_str: 'Mumbai',
+      court_str: 'Sessions Court',
+      ddl_filing_judge_id: 'judge_204',
+      judge_position_clean: 'sessions_judge',
+      judge_gender: 'male',
+      judge_tenure_days: 180,
+      court_prior_delay_rate: 0.72,
+      court_prior_avg_duration: 850,
+      court_prior_active_backlog: 3400,
+      casetype_prior_delay_rate: 0.68,
+    },
+  },
+  {
+    label: 'Moderate Risk Commercial Dispute',
+    description: 'Standard civil filing in district court with average active backlog',
+    values: {
+      state_code: '02',
+      dist_code: '05',
+      court_no: '03',
+      type_name: 'commercial suit',
+      filing_month: 3,
+      filing_day_of_week: 1,
+      filing_quarter: 1,
+      case_type_str: 'civil',
+      case_category: 'civil',
+      is_criminal_code: 0,
+      statutory_act_count: 1,
+      ipc_section_count: 0,
+      bailable_ipc_flag: 'unknown',
+      primary_act_id: 'act_cpc',
+      female_defendant_clean: '1',
+      female_petitioner_clean: '0',
+      female_adv_def_clean: '1',
+      female_adv_pet_clean: '0',
+      state_str: 'Delhi',
+      district_str: 'New Delhi',
+      court_str: 'District Court Patiala House',
+      ddl_filing_judge_id: 'judge_108',
+      judge_position_clean: 'civil_judge',
+      judge_gender: 'female',
+      judge_tenure_days: 720,
+      court_prior_delay_rate: 0.42,
+      court_prior_avg_duration: 450,
+      court_prior_active_backlog: 1100,
+      casetype_prior_delay_rate: 0.38,
+    },
+  },
+  {
+    label: 'Low Risk Fast-Track Bail Petition',
+    description: 'Bail application in efficient court establishment',
+    values: {
+      state_code: '03',
+      dist_code: '02',
+      court_no: '02',
+      type_name: 'bail application',
+      filing_month: 10,
+      filing_day_of_week: 4,
+      filing_quarter: 4,
+      case_type_str: 'criminal',
+      case_category: 'criminal',
+      is_criminal_code: 1,
+      statutory_act_count: 1,
+      ipc_section_count: 1,
+      bailable_ipc_flag: 'bailable',
+      primary_act_id: 'act_crpc',
+      female_defendant_clean: '0',
+      female_petitioner_clean: '1',
+      female_adv_def_clean: '1',
+      female_adv_pet_clean: '1',
+      state_str: 'Karnataka',
+      district_str: 'Bengaluru Urban',
+      court_str: 'Fast Track Court',
+      ddl_filing_judge_id: 'judge_302',
+      judge_position_clean: 'magistrate',
+      judge_gender: 'female',
+      judge_tenure_days: 1200,
+      court_prior_delay_rate: 0.15,
+      court_prior_avg_duration: 120,
+      court_prior_active_backlog: 300,
+      casetype_prior_delay_rate: 0.12,
+    },
+  },
+];
