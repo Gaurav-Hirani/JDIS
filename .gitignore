@@ -63,6 +63,8 @@ frontend/dist/
 frontend/build/
 frontend/.env
 frontend/.env.local
+frontend/.vite/
+frontend/test-results/
 
 # Backend
 backend/.venv/
@@ -90,3 +92,7 @@ backend/__pycache__/
 *.key
 credentials.json
 service-account.json
+
+
+.vite/
+test-results/
