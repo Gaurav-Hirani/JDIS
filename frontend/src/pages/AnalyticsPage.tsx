@@ -63,16 +63,16 @@ export const AnalyticsPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-stack-md">
       {/* Header Banner */}
-      <div className="card-glass p-6 border-slate-800">
-        <div className="flex items-center space-x-3">
-          <div className="p-2.5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30">
+      <div className="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg shadow-sm">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-primary-container text-on-primary-container rounded-lg shrink-0">
             <BarChart3 className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-slate-100">Judicial System Analytics</h1>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <h1 className="font-headline-sm text-headline-sm text-primary font-bold">Judicial System Analytics</h1>
+            <p className="font-body-md text-body-md text-on-surface-variant mt-1">
               Empirical administrative delay risk aggregation across courts, case types, and risk bands
             </p>
           </div>
@@ -86,33 +86,33 @@ export const AnalyticsPage: React.FC = () => {
           value={summary.total_cases}
           subtitle={`Total Predictions: ${summary.total_predictions}`}
           icon={FolderCheck}
-          accentColor="text-blue-400"
+          accentColor="text-secondary"
         />
         <StatCard
           title="High Risk Ratio"
           value={`${summary.high_risk_cases_percentage.toFixed(1)}%`}
           subtitle={`${summary.high_risk_cases_count} High/Very High cases`}
           icon={ShieldAlert}
-          accentColor="text-rose-400"
+          accentColor="text-error"
         />
         <StatCard
           title="Average Risk Score"
           value={`${summary.average_risk_score.toFixed(1)} / 100`}
           subtitle="System-wide empirical score"
           icon={Activity}
-          accentColor="text-amber-400"
+          accentColor="text-tertiary"
         />
         <StatCard
           title="Average Duration"
           value={formatDurationDays(summary.average_predicted_duration_days)}
           subtitle="Estimated time to disposal"
           icon={Clock}
-          accentColor="text-indigo-400"
+          accentColor="text-secondary"
         />
       </div>
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <RiskDistChart data={riskDist} />
         <CaseTypeBarChart caseTypes={caseTypes} />
       </div>
@@ -121,10 +121,10 @@ export const AnalyticsPage: React.FC = () => {
       <CourtMetricsTable courts={courts} />
 
       {/* Governance Notice */}
-      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3 text-xs text-slate-400">
-        <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+      <div className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/50 flex items-start gap-3 font-body-sm text-body-sm text-on-surface-variant">
+        <Info className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-slate-300">Methodological Note:</strong> Analytics reflect historical administrative delay patterns and active court backlog. Variations between courts indicate operational throughput differences, not judicial culpability or causal performance gaps.
+          <strong className="text-on-surface">Methodological Note:</strong> Analytics reflect historical administrative delay patterns and active court backlog. Variations between courts indicate operational throughput differences, not judicial culpability or causal performance gaps.
         </p>
       </div>
     </div>

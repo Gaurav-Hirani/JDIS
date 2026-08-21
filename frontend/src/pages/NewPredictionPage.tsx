@@ -5,7 +5,7 @@ import { createCaseRecord } from '../api/cases';
 import { PredictionForm } from '../components/prediction/PredictionForm';
 import { PredictionFormValues } from '../schemas/predictionSchema';
 import { ErrorState } from '../components/common/ErrorState';
-import { Sparkles, FileText, Scale } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export const NewPredictionPage: React.FC = () => {
   const navigate = useNavigate();
@@ -49,16 +49,16 @@ export const NewPredictionPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-stack-md">
       {/* Page Header */}
-      <div className="card-glass p-6 border-slate-800">
-        <div className="flex items-center space-x-3">
-          <div className="p-2.5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30">
+      <div className="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg shadow-sm">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-primary-container text-on-primary-container rounded-lg shrink-0">
             <Sparkles className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-slate-100">Filing Stage Case Risk Prediction</h1>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <h1 className="font-headline-sm text-headline-sm text-primary">Filing Stage Case Risk Prediction</h1>
+            <p className="font-body-md text-body-md text-on-surface-variant mt-1">
               Enter supported 29 filing-stage case metadata to evaluate delay probability and JDIS Risk Score
             </p>
           </div>

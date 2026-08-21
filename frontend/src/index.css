@@ -3,17 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-low: #10b981;
-    --color-moderate: #f59e0b;
-    --color-high: #f97316;
-    --color-very-high: #ef4444;
-  }
-
   body {
-    background-color: #0b1329;
-    color: #f1f5f9;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    @apply bg-background text-on-surface font-body-md;
+    /* Remove old dark body background color override */
   }
 }
 
@@ -24,35 +16,36 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  @apply bg-surface-container-low;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  @apply bg-outline-variant;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  @apply bg-outline;
 }
 
-/* Risk Band Styling Utilities */
+/* Risk Band Styling Utilities mapped to the new risk palette */
 .risk-badge-low {
-  @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/30;
+  @apply bg-risk-low/10 text-risk-low border border-risk-low/30;
 }
 
 .risk-badge-moderate {
-  @apply bg-amber-500/10 text-amber-400 border border-amber-500/30;
+  @apply bg-risk-moderate/10 text-risk-moderate border border-risk-moderate/30;
 }
 
 .risk-badge-high {
-  @apply bg-orange-500/10 text-orange-400 border border-orange-500/30;
+  @apply bg-risk-high/10 text-risk-high border border-risk-high/30;
 }
 
 .risk-badge-very-high {
-  @apply bg-rose-500/10 text-rose-400 border border-rose-500/30;
+  @apply bg-risk-veryHigh/10 text-risk-veryHigh border border-risk-veryHigh/30;
 }
 
 .card-glass {
-  @apply bg-slate-900/80 backdrop-blur border border-slate-800 rounded-xl shadow-xl;
+  /* Previously a dark glass card. Now we use the Stitch surface container. */
+  @apply bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm;
 }

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JDIS - Prediction Result</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2e4867",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001e2f",
+                        "on-secondary-fixed-variant": "#204b65",
+                        "on-secondary": "#ffffff",
+                        "outline": "#74777e",
+                        "secondary": "#3a637e",
+                        "primary-fixed-dim": "#aec9ed",
+                        "tertiary-fixed-dim": "#93d0e0",
+                        "surface-bright": "#f7f9ff",
+                        "surface-tint": "#466080",
+                        "tertiary-container": "#003640",
+                        "surface-container-highest": "#d9e3f1",
+                        "on-primary-container": "#809abd",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container": "#e4effd",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d1dbe8",
+                        "inverse-on-surface": "#e8f2ff",
+                        "surface-container-low": "#edf4ff",
+                        "on-tertiary-container": "#65a1b1",
+                        "primary-container": "#16324f",
+                        "primary": "#001d37",
+                        "tertiary": "#001f26",
+                        "inverse-surface": "#27313c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001d37",
+                        "tertiary-fixed": "#afecfd",
+                        "on-background": "#121d26",
+                        "inverse-primary": "#aec9ed",
+                        "on-surface": "#121d26",
+                        "surface-container-high": "#dfe9f7",
+                        "outline-variant": "#c3c6ce",
+                        "on-surface-variant": "#43474d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#3b637f",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#b6dfff",
+                        "background": "#f7f9ff",
+                        "surface-variant": "#d9e3f1",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "secondary-fixed-dim": "#a3cbeb",
+                        "secondary-fixed": "#c8e6ff",
+                        "primary-fixed": "#d2e4ff",
+                        "risk-high": "#ba1a1a",
+                        "risk-moderate": "#f9a825",
+                        "risk-low": "#2e7d32"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gauge-circle {
+            transition: stroke-dasharray 1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full h-16 px-gutter ml-64 max-w-[calc(100%-16rem)] docked full-width top-0 sticky z-30">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-black text-primary">Judicial Delay Intelligence System</span>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined">sensors</span></button>
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen flex flex-col z-40 bg-primary docked h-full w-64 shadow-md text-on-primary">
+<div class="p-container-padding flex items-center gap-3">
+<div class="w-10 h-10 bg-on-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">JDIS</h1>
+<p class="font-label-sm text-label-sm text-on-primary/80">Judicial Intelligence</p>
+</div>
+</div>
+<div class="px-gutter mb-6">
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-3 rounded hover:bg-on-secondary-fixed-variant transition-colors">Submit New Case</button>
+</div>
+<div class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container font-bold rounded-lg m-2 px-4 py-3 scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">add_chart</span>
+<span class="font-label-md text-label-md">New Prediction</span>
+</a>
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md text-label-md">Cases</span>
+</a>
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">Methodology</span>
+</a>
+</div>
+<div class="p-4 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-primary-container/70 hover:text-on-primary px-4 py-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 p-container-padding max-w-[1440px] mx-auto">
+<div class="mb-8 flex items-center justify-between">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">Judicial Delay Assessment</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Case #CV-2023-8942 • Prediction generated Oct 24, 2023</p>
+</div>
+<button class="border border-outline-variant text-on-surface font-label-md px-4 py-3 rounded hover:border-outline transition-colors flex items-center gap-2 bg-surface-container-lowest shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Report
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Primary Assessment -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Risk Gauge Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-risk-high"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">speed</span> Overall Risk Score
+                    </h3>
+<div class="flex flex-col items-center justify-center py-4">
+<div class="relative w-48 h-48">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="none" r="40" stroke="#f0f2f5" stroke-width="8"></circle>
+<!-- Progress track -->
+<circle class="gauge-circle" cx="50" cy="50" fill="none" r="40" stroke="#ba1a1a" stroke-dasharray="203.5 251.2" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg text-risk-high">81<span class="text-headline-md text-on-surface-variant">/100</span></span>
+<span class="font-label-sm text-label-sm bg-risk-high text-white px-2 py-1 rounded mt-1">VERY HIGH</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mt-4 max-w-[80%]">
+                            This case exhibits significant indicators of extended delay beyond standard regional medians.
+                        </p>
+</div>
+</div>
+<!-- Duration Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">calendar_clock</span> Expected Duration
+                    </h3>
+<div class="flex items-end gap-3 mb-2">
+<span class="font-display-lg text-display-lg text-primary">524 <span class="text-headline-sm text-on-surface-variant font-normal">days</span></span>
+<span class="font-body-lg text-body-lg text-on-surface-variant pb-1">(~1.4 years)</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full mb-4">
+<div class="bg-risk-high h-1 rounded-full" style="width: 81%"></div>
+</div>
+<div class="flex items-start gap-2 text-risk-high bg-error-container/30 p-3 rounded border border-error-container">
+<span class="material-symbols-outlined text-[18px] mt-0.5">warning</span>
+<p class="font-body-md text-body-md text-on-surface">
+<strong>Warning:</strong> Case falls into the upper 15% long-tail distribution for this jurisdiction. Standard timeline expectations do not apply.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & SHAP -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Probability Metrics -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
+<div class="p-6 border-b border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">analytics</span> Probability Metrics
+                        </h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Raw Model Probability</p>
+<p class="font-headline-md text-headline-md text-primary">87.23%</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">Initial algorithmic output before baseline adjustment.</p>
+</div>
+<div class="border-l border-outline-variant pl-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Calibrated Delay Prob</p>
+<p class="font-headline-md text-headline-md text-primary">81.29%</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">Adjusted via isotonic calibration for jurisdictional accuracy.</p>
+</div>
+<div class="border-l border-outline-variant pl-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">JDIS Risk Score</p>
+<p class="font-headline-md text-headline-md text-risk-high">81/100</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">Final normalized score presented to end users.</p>
+</div>
+</div>
+</div>
+<!-- SHAP Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">psychology</span> Why this prediction?
+                        </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-variant px-2 py-1 rounded">SHAP Analysis</span>
+</div>
+<div class="p-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Top features driving the delay prediction. <em class="text-on-surface text-opacity-70">Note: These represent model contributions, not strictly causal explanations.</em>
+</p>
+<div class="space-y-4">
+<!-- Feature 1 -->
+<div>
+<div class="flex justify-between font-data-mono text-data-mono mb-1">
+<span class="text-on-surface">Filing Judge Caseload (Current)</span>
+<span class="text-risk-high">+24.5%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded flex">
+<div class="w-1/2 flex justify-end"></div>
+<div class="w-1/2 flex">
+<div class="bg-risk-high h-2 rounded-r" style="width: 49%"></div>
+</div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div>
+<div class="flex justify-between font-data-mono text-data-mono mb-1">
+<span class="text-on-surface">Case Complexity Index (Derived)</span>
+<span class="text-risk-high">+18.2%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded flex">
+<div class="w-1/2 flex justify-end"></div>
+<div class="w-1/2 flex">
+<div class="bg-risk-high h-2 rounded-r" style="width: 36%"></div>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div>
+<div class="flex justify-between font-data-mono text-data-mono mb-1">
+<span class="text-on-surface">Historical Court Backlog (YTD)</span>
+<span class="text-risk-high">+12.8%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded flex">
+<div class="w-1/2 flex justify-end"></div>
+<div class="w-1/2 flex">
+<div class="bg-risk-high h-2 rounded-r" style="width: 25%"></div>
+</div>
+</div>
+</div>
+<!-- Feature 4 (Negative driver) -->
+<div>
+<div class="flex justify-between font-data-mono text-data-mono mb-1">
+<span class="text-on-surface">Plaintiff Representation Tier</span>
+<span class="text-secondary">-5.4%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded flex">
+<div class="w-1/2 flex justify-end">
+<div class="bg-secondary h-2 rounded-l" style="width: 11%"></div>
+</div>
+<div class="w-1/2 flex"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

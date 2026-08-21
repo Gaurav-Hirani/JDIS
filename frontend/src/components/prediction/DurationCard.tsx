@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatDurationDays } from '../../utils/formatters';
-import { Calendar, AlertTriangle, Clock } from 'lucide-react';
+import { AlertTriangle, Clock } from 'lucide-react';
 
 interface DurationCardProps {
   predictedDurationDays?: number;
@@ -12,30 +12,30 @@ export const DurationCard: React.FC<DurationCardProps> = ({
   limitationsFlag = 'Systematically underpredicts extreme outliers (>5 years). Associational estimate only.',
 }) => {
   return (
-    <div className="card-glass p-6 border-slate-800 space-y-4">
+    <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm p-6 space-y-4">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <div className="p-2 bg-indigo-600/20 text-indigo-400 rounded-lg border border-indigo-500/30">
-            <Clock className="w-5 h-5" />
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-secondary-container text-on-secondary-container rounded-lg border border-secondary/30 shrink-0">
+            <Clock className="w-5 h-5 text-secondary" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-slate-200">Predicted Case Duration</h3>
-            <p className="text-xs text-slate-400">Estimated expected total days from filing to initial resolution</p>
+            <h3 className="font-headline-sm text-headline-sm text-primary">Predicted Case Duration</h3>
+            <p className="font-body-md text-body-md text-on-surface-variant">Estimated expected total days from filing to initial resolution</p>
           </div>
         </div>
 
         <div className="text-right">
-          <div className="text-2xl font-bold font-mono text-indigo-300">
+          <div className="text-2xl font-bold font-data-mono text-secondary">
             {formatDurationDays(predictedDurationDays)}
           </div>
         </div>
       </div>
 
       {limitationsFlag && (
-        <div className="flex items-start space-x-2.5 text-xs text-amber-300/90 bg-amber-950/30 p-3 rounded-lg border border-amber-800/50">
-          <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-          <div className="leading-relaxed">
-            <span className="font-semibold block text-amber-200">Model Limitation Notice:</span>
+        <div className="flex items-start gap-2.5 font-label-md text-label-md text-error bg-error-container p-3 rounded-lg border border-error/20 mt-4">
+          <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+          <div className="leading-relaxed text-on-error-container">
+            <span className="font-bold block mb-0.5">Model Limitation Notice:</span>
             {limitationsFlag} Case duration estimates are non-causal statistical associations subject to long-tail variance.
           </div>
         </div>

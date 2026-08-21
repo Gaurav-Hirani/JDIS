@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JDIS | Executive Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2e4867",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001e2f",
+                        "on-secondary-fixed-variant": "#204b65",
+                        "on-secondary": "#ffffff",
+                        "outline": "#74777e",
+                        "secondary": "#3a637e",
+                        "primary-fixed-dim": "#aec9ed",
+                        "tertiary-fixed-dim": "#93d0e0",
+                        "surface-bright": "#f7f9ff",
+                        "surface-tint": "#466080",
+                        "tertiary-container": "#003640",
+                        "surface-container-highest": "#d9e3f1",
+                        "on-primary-container": "#809abd",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container": "#e4effd",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d1dbe8",
+                        "inverse-on-surface": "#e8f2ff",
+                        "surface-container-low": "#edf4ff",
+                        "on-tertiary-container": "#65a1b1",
+                        "primary-container": "#16324f",
+                        "primary": "#001d37",
+                        "tertiary": "#001f26",
+                        "inverse-surface": "#27313c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001d37",
+                        "tertiary-fixed": "#afecfd",
+                        "on-background": "#121d26",
+                        "inverse-primary": "#aec9ed",
+                        "on-surface": "#121d26",
+                        "surface-container-high": "#dfe9f7",
+                        "outline-variant": "#c3c6ce",
+                        "on-surface-variant": "#43474d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#3b637f",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#b6dfff",
+                        "background": "#f7f9ff",
+                        "surface-variant": "#d9e3f1",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "secondary-fixed-dim": "#a3cbeb",
+                        "secondary-fixed": "#c8e6ff",
+                        "primary-fixed": "#d2e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen overflow-hidden flex font-body-md">
+<!-- SideNavBar -->
+<nav class="bg-primary dark:bg-on-primary-fixed text-on-primary dark:text-primary-fixed shadow-md docked h-full w-64 left-0 fixed left-0 top-0 flex flex-col z-40 hidden md:flex">
+<div class="p-gutter flex items-center gap-4 border-b border-surface-tint/30 pb-6">
+<img alt="JDIS Logo" class="w-12 h-12 object-contain bg-white rounded p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlw86B7KtB2w1COOeVfcAwxayTyQSKZygTG72f0K_-kjOzEwdUUEosAMgcAKfTU1Zz0o2AqfNNqREttZwGIJYLxpy9P1pSgHdK13t7QtnsPhPeLysrSirkPBQv2Y-_4P-DQtK7GvIUmgt97Wp6YguIpw3AmfQ4CHsN_HA4xsQsYE_Zt05yk2IrdkWjwGHb1JpzW98CYu3DucRQ5wFc8Kb7mlzAcnj-AGRwr1PNvx2lyEIV8eqluI0k"/>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-primary">JDIS</div>
+<div class="font-label-md text-label-md text-on-primary/70">Judicial Intelligence</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-stack-md flex flex-col gap-unit px-2">
+<!-- Active Tab: Dashboard -->
+<a class="bg-primary-container text-on-primary-container font-bold rounded-lg m-2 flex items-center gap-3 px-4 py-3 scale-95 duration-100 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">add_chart</span>
+<span class="font-label-md text-label-md">New Prediction</span>
+</a>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md text-label-md">Cases</span>
+</a>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">Methodology</span>
+</a>
+</div>
+<div class="p-gutter border-t border-surface-tint/30 flex flex-col gap-unit">
+<button class="bg-primary-container text-on-primary hover:bg-primary-fixed-dim/30 w-full py-2 rounded font-label-md text-label-md transition-colors border border-on-primary/20 mb-4">
+                Submit New Case
+            </button>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-2 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-2 hover:bg-primary-fixed-dim/20 transition-colors flex items-center gap-3 rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 h-full">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center w-full h-16 px-gutter max-w-full sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-black text-primary md:hidden">JDIS</span>
+<div class="hidden md:flex gap-6 h-full items-center">
+<span class="text-primary font-bold border-b-2 border-primary h-full flex items-center px-2 font-label-md text-label-md">Dashboard</span>
+</div>
+</div>
+<div class="flex-1 max-w-md mx-6 hidden md:block">
+<div class="relative focus-within:ring-2 focus-within:ring-secondary rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-on-surface font-body-md focus:outline-none placeholder-on-surface-variant" placeholder="Search cases, courts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed-dim">
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-surface-container-high transition-all rounded-full flex items-center justify-center ml-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto p-gutter md:p-container-padding bg-background">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-outline-variant pb-stack-md">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Judicial Delay Intelligence</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Monitor delay risk, case workload, and model-driven insights across the judicial system.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded border border-outline-variant/50">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim inline-block animate-pulse"></span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">ML System Online | Model v1.0-config-d</span>
+</div>
+</section>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-4 rounded-lg shadow-sm flex flex-col">
+<div class="text-on-surface-variant font-label-md text-label-md mb-2 flex justify-between items-center">
+<span>TOTAL ACTIVE CASES</span>
+<span class="material-symbols-outlined text-outline">gavel</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary mb-1">12,482</div>
+<div class="text-surface-tint font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 2.4% vs last month
+                        </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-4 rounded-lg shadow-sm flex flex-col">
+<div class="text-on-surface-variant font-label-md text-label-md mb-2 flex justify-between items-center">
+<span>HIGH RISK CASES</span>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="font-headline-md text-headline-md text-error mb-1">843</div>
+<div class="text-error font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 12.1% vs last month
+                        </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-4 rounded-lg shadow-sm flex flex-col">
+<div class="text-on-surface-variant font-label-md text-label-md mb-2 flex justify-between items-center">
+<span>AVERAGE RISK SCORE</span>
+<span class="material-symbols-outlined text-outline">speed</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary mb-1">0.42</div>
+<div class="text-surface-tint font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> 0.03 vs last month
+                        </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-4 rounded-lg shadow-sm flex flex-col">
+<div class="text-on-surface-variant font-label-md text-label-md mb-2 flex justify-between items-center">
+<span>PREDICTED DELAY RATE</span>
+<span class="material-symbols-outlined text-outline">pending_actions</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary mb-1">18.5%</div>
+<div class="text-surface-tint font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 1.2% vs last month
+                        </div>
+</div>
+</section>
+<!-- Charts Section (Bento Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter h-auto lg:h-[400px]">
+<!-- Chart 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-4 flex flex-col lg:col-span-1 shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Risk Distribution</h3>
+<div class="flex-1 flex items-center justify-center bg-surface-container-low rounded border border-outline-variant/20 relative" data-alt="A minimalist, highly detailed data visualization graphic representing a donut chart with sections in deep navy, pale blue, and striking red against a crisp white background. High-tech corporate aesthetic, soft lighting, analytical mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO86MeyZUgWHTqgFWkmxoGKthVyhB54EdAKwx-ljOoo3KYv2uEPi78rs6jPPZpxhf0Uv5C7z7clT3DQIhG_s-j9PMVYtKkFOFIIXjjrc5kaUcc6qgJItVzxNoe9kSWmdbWdJZDLORKHxySAlI5M1zCkJc39TmV0VTKMZ0Mxxc0Imy6XkCL5JA1ux1TTYH46GPi9Wvh6vtsEHGxTVRZI0-OpZT2TjkJpHtgycd58-I-l_iXQXGKKkgH')">
+<!-- Placeholder for actual chart rendering -->
+<div class="absolute inset-0 flex items-center justify-center opacity-50 font-label-md text-label-md text-surface-tint">Chart Visual Placeholder</div>
+</div>
+</div>
+<!-- Chart 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-4 flex flex-col lg:col-span-2 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm text-primary">Risk by Court Region</h3>
+<button class="text-surface-tint font-label-sm text-label-sm border border-outline-variant rounded px-2 py-1 hover:bg-surface-container-low">View Details</button>
+</div>
+<div class="flex-1 flex items-center justify-center bg-surface-container-low rounded border border-outline-variant/20 relative" data-alt="A clean, structured bar chart visualization showing comparative data across different regions. The bars are styled in corporate blues and neutral tones on a stark white canvas. Enterprise software UI aesthetic, conveying precision and authoritative data transparency." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-znM7e-1WtU0zyyvswsaxMrp4C92F03j8-27wVm1SgcPReu4XFr3EWCduhw6fspMa2g6M8p4XksBi3VoGy7kDN1jrWfw3CSqVHtWgrGTrO5aPbrPHzn-fsAzdVhM1OEG5yhcGDBDgCkblw1wLg7AsL2lD6PTurWINuwcosVeyjp2a38ilrD4GaJOhMilfuoJiP85RQMt0y6f4q2RoAPYv_vZ_82kV20jeyW4XEvpzCuhXmDMlrJKO')">
+<!-- Placeholder for actual chart rendering -->
+<div class="absolute inset-0 flex items-center justify-center opacity-50 font-label-md text-label-md text-surface-tint">Bar Chart Visualization Placeholder</div>
+</div>
+</div>
+</section>
+<!-- Recent Cases Table -->
+<section class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant/50 flex justify-between items-center bg-surface">
+<h3 class="font-headline-sm text-headline-sm text-primary">High Priority Cases</h3>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-3 py-1.5 rounded hover:bg-primary/90 transition-colors">Export</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/50 bg-surface-container-low">
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">CASE ID</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">COURT</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">TYPE</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">RISK SCORE</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">RISK BAND</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">EST. DURATION</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">STATUS</th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-data-mono text-on-surface">
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors relative">
+<td class="py-3 px-4 font-medium"><div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>JD-2023-892</td>
+<td class="py-3 px-4">Supreme Court</td>
+<td class="py-3 px-4 text-on-surface-variant">Constitutional</td>
+<td class="py-3 px-4 font-semibold text-error">0.89</td>
+<td class="py-3 px-4"><span class="bg-error text-on-error px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">CRITICAL</span></td>
+<td class="py-3 px-4">420 Days</td>
+<td class="py-3 px-4 text-surface-tint">Pending Review</td>
+</tr>
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors relative">
+<td class="py-3 px-4 font-medium"><div class="absolute left-0 top-0 bottom-0 w-1 bg-[#d97706]"></div>JD-2023-904</td>
+<td class="py-3 px-4">Appellate - Div 2</td>
+<td class="py-3 px-4 text-on-surface-variant">Civil Action</td>
+<td class="py-3 px-4 font-semibold text-[#d97706]">0.65</td>
+<td class="py-3 px-4"><span class="bg-[#fef3c7] text-[#92400e] border border-[#d97706]/30 px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">HIGH</span></td>
+<td class="py-3 px-4">280 Days</td>
+<td class="py-3 px-4 text-surface-tint">In Hearing</td>
+</tr>
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors relative">
+<td class="py-3 px-4 font-medium"><div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim"></div>JD-2023-911</td>
+<td class="py-3 px-4">District Court 4</td>
+<td class="py-3 px-4 text-on-surface-variant">Criminal</td>
+<td class="py-3 px-4 font-semibold">0.32</td>
+<td class="py-3 px-4"><span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">LOW</span></td>
+<td class="py-3 px-4">90 Days</td>
+<td class="py-3 px-4 text-surface-tint">Pre-Trial</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

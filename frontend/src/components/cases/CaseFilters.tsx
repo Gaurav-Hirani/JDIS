@@ -29,36 +29,38 @@ export const CaseFilters: React.FC<CaseFiltersProps> = ({
   onRiskBandChange,
   onReset,
 }) => {
+  const inputClass = "bg-surface border border-outline-variant rounded-md px-3 py-1.5 font-body-sm text-body-sm text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-shadow";
+
   return (
-    <div className="card-glass p-4 space-y-3 border-slate-800">
+    <div className="bg-surface-container-low border border-outline-variant/50 rounded-lg p-4 space-y-3">
       <div className="flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Search input */}
         <div className="relative w-full md:w-80">
-          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search by case ID or court..."
-            className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-9 pr-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+            className={`w-full pl-9 pr-3 ${inputClass}`}
           />
         </div>
 
         {/* Filter controls */}
         <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
           {/* Risk Band Select */}
-          <div className="flex items-center space-x-1.5 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-300">
-            <Filter className="w-3.5 h-3.5 text-slate-500" />
+          <div className={`flex items-center gap-1.5 ${inputClass} px-2.5`}>
+            <Filter className="w-3.5 h-3.5 text-on-surface-variant shrink-0" />
             <select
               value={riskBand}
               onChange={(e) => onRiskBandChange(e.target.value as RiskBand | '')}
-              className="bg-transparent text-xs text-slate-200 focus:outline-none cursor-pointer"
+              className="bg-transparent text-on-surface focus:outline-none cursor-pointer border-none p-0"
             >
-              <option value="" className="bg-slate-900">All Risk Bands</option>
-              <option value="Low" className="bg-slate-900">Low Risk (0-20)</option>
-              <option value="Moderate" className="bg-slate-900">Moderate Risk (21-50)</option>
-              <option value="High" className="bg-slate-900">High Risk (51-80)</option>
-              <option value="Very High" className="bg-slate-900">Very High Risk (81-100)</option>
+              <option value="">All Risk Bands</option>
+              <option value="Low">Low Risk (0-20)</option>
+              <option value="Moderate">Moderate Risk (21-50)</option>
+              <option value="High">High Risk (51-80)</option>
+              <option value="Very High">Very High Risk (81-100)</option>
             </select>
           </div>
 
@@ -68,7 +70,7 @@ export const CaseFilters: React.FC<CaseFiltersProps> = ({
             value={stateCode}
             onChange={(e) => onStateCodeChange(e.target.value)}
             placeholder="State Code"
-            className="w-24 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-100 placeholder-slate-500 font-mono focus:outline-none focus:border-blue-500"
+            className={`w-24 font-data-mono ${inputClass}`}
           />
 
           {/* Court No Input */}
@@ -77,16 +79,16 @@ export const CaseFilters: React.FC<CaseFiltersProps> = ({
             value={courtNo}
             onChange={(e) => onCourtNoChange(e.target.value)}
             placeholder="Court No"
-            className="w-24 bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-100 placeholder-slate-500 font-mono focus:outline-none focus:border-blue-500"
+            className={`w-24 font-data-mono ${inputClass}`}
           />
 
           {/* Reset button */}
           <button
             onClick={onReset}
-            className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+            className="p-2 rounded-md bg-surface-container-high hover:bg-outline-variant text-on-surface transition-colors"
             title="Reset Filters"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className="w-4 h-4" />
           </button>
         </div>
       </div>

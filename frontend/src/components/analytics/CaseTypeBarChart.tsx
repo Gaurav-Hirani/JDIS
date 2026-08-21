@@ -20,47 +20,48 @@ export const CaseTypeBarChart: React.FC<CaseTypeBarChartProps> = ({ caseTypes })
     : [];
 
   return (
-    <div className="card-glass p-6 space-y-4">
-      <div className="flex items-center space-x-3">
-        <div className="p-2 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30">
-          <Layers className="w-5 h-5" />
+    <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm p-6 space-y-4">
+      <div className="flex items-center gap-3">
+        <div className="p-2 bg-primary-container text-on-primary-container rounded-lg border border-primary/20 shrink-0">
+          <Layers className="w-5 h-5 text-primary" />
         </div>
         <div>
-          <h3 className="text-base font-bold text-slate-100">Delay Risk Propensity by Case Type</h3>
-          <p className="text-xs text-slate-400">Average JDIS Risk Score breakdown across granular procedural case types</p>
+          <h3 className="font-headline-sm text-headline-sm font-bold text-primary">Delay Risk Propensity by Case Type</h3>
+          <p className="font-body-md text-body-md text-on-surface-variant">Average JDIS Risk Score breakdown across granular procedural case types</p>
         </div>
       </div>
 
       {!hasData ? (
-        <div className="p-8 text-center text-xs text-slate-400">
+        <div className="p-8 text-center font-body-sm text-body-sm text-on-surface-variant">
           No case-type analytics available yet.
         </div>
       ) : (
         <div className="h-64 w-full pt-2">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
               <XAxis
                 dataKey="name"
                 stroke="#64748b"
                 fontSize={11}
                 tickLine={false}
-                axisLine={{ stroke: '#334155' }}
+                axisLine={{ stroke: '#cbd5e1' }}
               />
               <YAxis
                 stroke="#64748b"
                 fontSize={11}
                 domain={[0, 100]}
                 tickLine={false}
-                axisLine={{ stroke: '#334155' }}
+                axisLine={false}
               />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: '#0f172a',
-                  borderColor: '#334155',
+                  backgroundColor: '#ffffff',
+                  borderColor: '#e2e8f0',
                   borderRadius: '8px',
                   fontSize: '12px',
-                  color: '#f8fafc',
+                  color: '#0f172a',
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
                 }}
                 formatter={(value: any) => [`Avg Risk Score: ${Number(value).toFixed(1)} / 100`, 'Risk Metrics']}
               />

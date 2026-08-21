@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JDIS - New Prediction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2e4867",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001e2f",
+                        "on-secondary-fixed-variant": "#204b65",
+                        "on-secondary": "#ffffff",
+                        "outline": "#74777e",
+                        "secondary": "#3a637e",
+                        "primary-fixed-dim": "#aec9ed",
+                        "tertiary-fixed-dim": "#93d0e0",
+                        "surface-bright": "#f7f9ff",
+                        "surface-tint": "#466080",
+                        "tertiary-container": "#003640",
+                        "surface-container-highest": "#d9e3f1",
+                        "on-primary-container": "#809abd",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container": "#e4effd",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d1dbe8",
+                        "inverse-on-surface": "#e8f2ff",
+                        "surface-container-low": "#edf4ff",
+                        "on-tertiary-container": "#65a1b1",
+                        "primary-container": "#16324f",
+                        "primary": "#001d37",
+                        "tertiary": "#001f26",
+                        "inverse-surface": "#27313c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001d37",
+                        "tertiary-fixed": "#afecfd",
+                        "on-background": "#121d26",
+                        "inverse-primary": "#aec9ed",
+                        "on-surface": "#121d26",
+                        "surface-container-high": "#dfe9f7",
+                        "outline-variant": "#c3c6ce",
+                        "on-surface-variant": "#43474d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#3b637f",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#b6dfff",
+                        "background": "#f7f9ff",
+                        "surface-variant": "#d9e3f1",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "secondary-fixed-dim": "#a3cbeb",
+                        "secondary-fixed": "#c8e6ff",
+                        "primary-fixed": "#d2e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar for dense analytical view */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c3c6ce; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #74777e; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md h-screen w-screen overflow-hidden flex selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<nav class="bg-primary dark:bg-on-primary-fixed docked h-full w-64 left-0 shadow-md fixed left-0 top-0 flex flex-col z-40">
+<div class="p-6 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[32px]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">JDIS</h1>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim">Judicial Intelligence</p>
+</div>
+</div>
+</div>
+<div class="px-4 py-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-3 px-4 rounded-DEFAULT flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Submit New Case
+            </button>
+</div>
+<ul class="flex flex-col flex-1 px-2 py-4 gap-1 overflow-y-auto">
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container font-bold rounded-lg m-2 px-4 py-3 flex items-center gap-3 Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">add_chart</span>
+<span>New Prediction</span>
+</a>
+</li>
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span>Cases</span>
+</a>
+</li>
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+</li>
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Methodology</span>
+</a>
+</li>
+</ul>
+<div class="p-2 border-t border-primary-container/30">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="text-on-primary-container/70 hover:text-on-primary px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-primary-fixed-dim/20 transition-colors Headlines: font-headline-sm text-headline-sm. Labels: font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help Center</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="flex-1 flex flex-col ml-64 max-w-[calc(100%-16rem)] relative h-full">
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 sticky border-b border-outline-variant flat no shadows flex justify-between items-center w-full h-16 px-gutter z-30">
+<div class="flex items-center gap-4 flex-1">
+<div class="font-headline-sm text-headline-sm font-black text-primary">Judicial Delay Intelligence System</div>
+</div>
+<div class="flex items-center gap-2 flex-1 justify-center max-w-md relative focus-within:ring-2 focus-within:ring-secondary rounded-DEFAULT">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-none py-2 pl-10 pr-4 rounded-DEFAULT font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:ring-0" placeholder="Search cases, dockets, or judges..." type="text"/>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<button class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-all p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+<button class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-all p-2 rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-all p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-container-padding bg-background relative">
+<div class="max-w-[1440px] mx-auto w-full grid grid-cols-12 gap-gutter">
+<div class="col-span-12 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-md">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary mb-1">Assess Case Delay Risk</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Estimate the likelihood of a case exceeding 24 months using filing-stage information.</p>
+</div>
+<div class="flex items-center gap-2 p-1 bg-surface-container-low border border-outline-variant rounded-DEFAULT">
+<button class="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">bolt</span> High Risk Scenario
+                        </button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-sm transition-colors">
+                            Moderate Risk
+                        </button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="px-4 py-2 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-sm transition-colors">
+                            Lower Risk
+                        </button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="px-4 py-2 font-label-md text-label-md text-secondary font-semibold hover:bg-secondary-container rounded-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">upload_file</span> Load Example
+                        </button>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-gutter">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary group-hover:bg-secondary transition-colors"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint">folder_open</span> A. Filing Information
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-stack-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Filing Date</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Initial Claim Amount (USD)</label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-on-surface-variant font-data-mono">$</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 pl-7 pr-3 font-data-mono text-data-mono text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Number of Plaintiffs</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-data-mono text-data-mono text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" min="1" type="number" value="1"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Number of Defendants</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-data-mono text-data-mono text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" min="1" type="number" value="1"/>
+</div>
+<div class="flex flex-col gap-1 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface">Filing Attorney Firm Size</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all appearance-none">
+<option value="">Select Firm Size</option>
+<option>Solo Practitioner</option>
+<option>Boutique (2-10 attorneys)</option>
+<option>Mid-Size (11-50 attorneys)</option>
+<option>Large/Corporate (50+ attorneys)</option>
+</select>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-tint group-hover:bg-secondary transition-colors"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint">account_balance</span> B. Case Classification
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-stack-md">
+<div class="flex flex-col gap-1 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface">Primary Subject Matter</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all appearance-none">
+<option value="">Select Category</option>
+<option>Commercial Litigation - Breach of Contract</option>
+<option>Tort - Personal Injury</option>
+<option>Tort - Medical Malpractice</option>
+<option>Intellectual Property - Patent Infringement</option>
+<option>Employment - Discrimination</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Statutory Complexity Score (0-10)</label>
+<div class="flex items-center gap-2">
+<input class="w-full accent-secondary" max="10" min="0" type="range" value="5"/>
+<span class="font-data-mono text-data-mono bg-surface-container-high px-2 py-1 rounded-sm">5.0</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Demand Type</label>
+<div class="flex gap-4 mt-2">
+<label class="flex items-center gap-2 font-body-md text-body-md text-on-surface cursor-pointer">
+<input checked="" class="text-secondary focus:ring-secondary border-outline-variant rounded-sm" type="checkbox"/> Monetary
+                                    </label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-on-surface cursor-pointer">
+<input class="text-secondary focus:ring-secondary border-outline-variant rounded-sm" type="checkbox"/> Injunctive Relief
+                                    </label>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container group-hover:bg-secondary transition-colors"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint">location_city</span> C. Court Information
+                        </h3>
+<div class="flex flex-col gap-stack-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Jurisdiction</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all appearance-none">
+<option>SDNY - Southern District of NY</option>
+<option>NDCA - Northern District of CA</option>
+<option>DED - District of Delaware</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-end">
+<label class="font-label-md text-label-md text-on-surface">Current District Backlog Index</label>
+<span class="font-label-sm text-label-sm text-error bg-error-container px-2 py-0.5 rounded-sm">High</span>
+</div>
+<input class="w-full bg-surface border border-outline-variant/50 rounded-DEFAULT py-2 px-3 font-data-mono text-data-mono text-on-surface-variant cursor-not-allowed" disabled="" type="text" value="1.84 (84% above avg)"/>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-on-secondary-fixed-variant group-hover:bg-secondary transition-colors"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-tint">person</span> D. Judge Information
+                        </h3>
+<div class="flex flex-col gap-stack-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Assigned Judge (If known)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-2 px-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all" placeholder="Type to search..." type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="flex items-center gap-2 font-body-md text-body-md text-on-surface cursor-pointer p-3 border border-outline-variant rounded-DEFAULT hover:bg-surface-container-low transition-colors">
+<input class="text-secondary focus:ring-secondary border-outline-variant rounded-sm" type="checkbox"/> 
+                                    Judge Assignment Pending
+                                </label>
+</div>
+</div>
+</section>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-6 mt-auto">
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary py-3 px-5 rounded-DEFAULT font-label-md text-label-md font-semibold hover:bg-primary/90 transition-colors shadow-sm flex items-center justify-center gap-2">
+                                Generate Delay Assessment
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span> Only information available at filing is used for this prediction.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

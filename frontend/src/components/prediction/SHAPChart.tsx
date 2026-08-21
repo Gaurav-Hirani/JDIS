@@ -10,7 +10,7 @@ interface SHAPChartProps {
 export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summaryNarrative }) => {
   if (!explanations || explanations.length === 0) {
     return (
-      <div className="card-glass p-6 text-center text-xs text-slate-400">
+      <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm p-6 text-center font-body-md text-body-md text-on-surface-variant">
         No SHAP local attributions available for this prediction record.
       </div>
     );
@@ -24,25 +24,25 @@ export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summary
   const maxMagnitude = Math.max(...sortedExplanations.map((item) => Math.abs(item.contribution)), 0.001);
 
   return (
-    <div className="card-glass p-6 md:p-8 space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+    <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-sm p-6 md:p-8 space-y-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant pb-4">
         <div>
-          <div className="flex items-center space-x-2">
-            <Sparkles className="w-5 h-5 text-blue-400" />
-            <h3 className="text-lg font-bold text-slate-100">Why This Prediction?</h3>
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-secondary" />
+            <h3 className="font-headline-sm text-headline-sm text-primary">Why This Prediction?</h3>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="font-body-md text-body-md text-on-surface-variant mt-1">
             Local SHAP attributions describing top feature drivers pushing delay risk higher or lower
           </p>
         </div>
 
-        <div className="flex items-center space-x-4 text-xs font-medium">
-          <div className="flex items-center space-x-1.5 text-rose-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+        <div className="flex items-center gap-4 font-label-sm text-label-sm">
+          <div className="flex items-center gap-1.5 text-error">
+            <span className="w-2.5 h-2.5 rounded-full bg-error inline-block"></span>
             <span>+ Increases Delay Risk</span>
           </div>
-          <div className="flex items-center space-x-1.5 text-blue-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block"></span>
+          <div className="flex items-center gap-1.5 text-secondary">
+            <span className="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span>
             <span>- Mitigates Delay Risk</span>
           </div>
         </div>
@@ -50,8 +50,8 @@ export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summary
 
       {/* Summary Narrative Banner */}
       {summaryNarrative && (
-        <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-300 leading-relaxed">
-          <span className="font-semibold text-blue-300 block mb-1">Executive Explanation Summary:</span>
+        <div className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-md text-body-md text-on-surface leading-relaxed">
+          <span className="font-bold text-primary block mb-1">Executive Explanation Summary:</span>
           {summaryNarrative}
         </div>
       )}
@@ -64,26 +64,26 @@ export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summary
           const percentage = Math.min((magnitude / maxMagnitude) * 100, 100);
 
           return (
-            <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-800/80 hover:border-slate-700 transition-colors">
+            <div key={idx} className="p-4 rounded-lg bg-surface-container-highest border border-outline-variant/50 hover:border-outline transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   {isPositive ? (
-                    <TrendingUp className="w-4 h-4 text-rose-400 shrink-0" />
+                    <TrendingUp className="w-4 h-4 text-error shrink-0" />
                   ) : (
-                    <TrendingDown className="w-4 h-4 text-blue-400 shrink-0" />
+                    <TrendingDown className="w-4 h-4 text-secondary shrink-0" />
                   )}
-                  <span className="text-xs font-bold text-slate-200 font-mono">
+                  <span className="font-data-mono font-bold text-primary">
                     {item.feature_name}
                   </span>
                   {item.feature_group && (
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-medium">
+                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant">
                       {item.feature_group}
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center space-x-3 text-xs font-mono">
-                  <span className={isPositive ? 'text-rose-400 font-bold' : 'text-blue-400 font-bold'}>
+                <div className="flex items-center gap-3 font-data-mono font-bold">
+                  <span className={isPositive ? 'text-error' : 'text-secondary'}>
                     {isPositive ? '+' : ''}{item.contribution.toFixed(4)}
                   </span>
                 </div>
@@ -91,16 +91,16 @@ export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summary
 
               {/* Human-Readable Description */}
               {item.human_readable_description && (
-                <p className="text-[11px] text-slate-400 mb-2 pl-6">
+                <p className="font-body-sm text-body-sm text-on-surface-variant mb-3 pl-6">
                   {item.human_readable_description}
                 </p>
               )}
 
               {/* Progress Bar Visualization */}
-              <div className="w-full bg-slate-850 rounded-full h-2 overflow-hidden flex">
+              <div className="w-full bg-surface-container-low rounded-full h-2 overflow-hidden flex">
                 <div
                   className={`h-full rounded-full transition-all duration-700 ${
-                    isPositive ? 'bg-gradient-to-r from-orange-500 to-rose-500' : 'bg-gradient-to-r from-cyan-500 to-blue-500'
+                    isPositive ? 'bg-error' : 'bg-secondary'
                   }`}
                   style={{ width: `${percentage}%` }}
                 />
@@ -111,10 +111,10 @@ export const SHAPChart: React.FC<SHAPChartProps> = ({ explanations = [], summary
       </div>
 
       {/* Mandatory Governance Non-Causal Note */}
-      <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3 text-xs text-slate-400">
-        <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+      <div className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/50 flex items-start gap-3 font-body-sm text-body-sm text-on-surface-variant mt-6">
+        <Info className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-slate-300">Non-Causal Governance Notice:</strong> These factors describe statistical model contribution and predictive association based on historical administrative data; they should not be interpreted as causal effects or judicial responsibility.
+          <strong className="text-on-surface">Non-Causal Governance Notice:</strong> These factors describe statistical model contribution and predictive association based on historical administrative data; they should not be interpreted as causal effects or judicial responsibility.
         </p>
       </div>
     </div>

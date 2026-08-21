@@ -15,9 +15,7 @@ import {
   ShieldAlert, 
   Activity, 
   Clock, 
-  FilePlus2, 
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 
 export const DashboardPage: React.FC = () => {
@@ -60,128 +58,125 @@ export const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-8">
-      {/* Executive Welcome & Action Header */}
-      <div className="card-glass p-6 border-blue-900/40 bg-gradient-to-r from-slate-900 via-slate-900 to-blue-950/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <>
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-outline-variant pb-stack-md">
         <div>
-          <div className="flex items-center space-x-2 mb-1">
-            <Sparkles className="w-5 h-5 text-blue-400" />
-            <h2 className="text-xl font-bold text-slate-100">JDIS Executive Delay Dashboard</h2>
-          </div>
-          <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-            Real-time filing stage delay risk monitoring and empirical XGBoost model predictions across district court establishments.
+          <h1 className="font-display-lg text-display-lg text-primary mb-2">Judicial Delay Intelligence</h1>
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Monitor delay risk, case workload, and model-driven insights across the judicial system.
           </p>
         </div>
+        <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded border border-outline-variant/50 shrink-0">
+          <span className="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim inline-block animate-pulse"></span>
+          <span className="font-data-mono text-data-mono text-on-surface-variant">ML System Online | Model v1.0-config-d</span>
+        </div>
+      </section>
 
-        <Link
-          to="/prediction/new"
-          className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-5 py-3 rounded-lg shadow-lg shadow-blue-500/25 transition-all shrink-0"
-        >
-          <FilePlus2 className="w-4 h-4" />
-          <span>New Filing Prediction</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
-
-      {/* Primary System KPI Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* KPI Grid */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mt-stack-lg">
         <StatCard
           title="Total Registered Cases"
-          value={summary.total_cases}
-          subtitle={`Across ${summary.total_predictions} total predictions`}
+          value={summary.total_cases.toLocaleString()}
+          subtitle={`Across ${summary.total_predictions.toLocaleString()} total predictions`}
           icon={FolderCheck}
-          accentColor="text-blue-400"
+          accentColor="text-primary"
         />
         <StatCard
           title="High Risk Cases"
-          value={summary.high_risk_cases_count}
+          value={summary.high_risk_cases_count.toLocaleString()}
           subtitle={`${summary.high_risk_cases_percentage.toFixed(1)}% of filing portfolio`}
           icon={ShieldAlert}
-          accentColor="text-rose-400"
+          accentColor="text-error"
         />
         <StatCard
-          title="Average JDIS Risk Score"
-          value={`${summary.average_risk_score.toFixed(1)} / 100`}
+          title="Average Risk Score"
+          value={summary.average_risk_score.toFixed(2)}
           subtitle="Calibrated empirical mean score"
           icon={Activity}
-          accentColor="text-amber-400"
+          accentColor="text-secondary"
         />
         <StatCard
-          title="Avg Predicted Duration"
+          title="Predicted Delay Duration"
           value={formatDurationDays(summary.average_predicted_duration_days)}
           subtitle="Estimated time to resolution"
           icon={Clock}
-          accentColor="text-indigo-400"
+          accentColor="text-primary"
         />
-      </div>
+      </section>
 
       {/* Main Grid: Risk Distribution & Recent Predictions Stream */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Risk Distribution Chart */}
-        <RiskDistChart data={riskDist} />
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-gutter mt-stack-lg">
+        {/* Risk Distribution Chart (takes 1 col) */}
+        <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-4 flex flex-col lg:col-span-1 shadow-sm h-full">
+          <h3 className="font-headline-sm text-headline-sm text-primary mb-4">Risk Distribution</h3>
+          <div className="flex-1 flex flex-col items-center justify-center min-h-[300px]">
+             <RiskDistChart data={riskDist} />
+          </div>
+        </div>
 
-        {/* Recent Case Predictions Stream */}
-        <div className="card-glass p-6 space-y-4 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-              <div>
-                <h3 className="text-base font-bold text-slate-100">Recent Filing Predictions</h3>
-                <p className="text-xs text-slate-400">Latest case evaluations processed by backend</p>
-              </div>
-              <Link to="/cases" className="text-xs text-blue-400 hover:text-blue-300 font-semibold">
-                View All →
-              </Link>
+        {/* Recent Case Predictions Stream (takes 2 cols) */}
+        <div className="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-4 flex flex-col lg:col-span-2 shadow-sm">
+          <div className="flex items-center justify-between border-b border-outline-variant pb-3 mb-4">
+            <div>
+              <h3 className="font-headline-sm text-headline-sm text-primary">Recent Filing Predictions</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant">Latest case evaluations processed by backend</p>
             </div>
-
-            {recentCases.length === 0 ? (
-              <p className="text-xs text-slate-500 text-center py-8">No recent case predictions registered yet.</p>
-            ) : (
-              <div className="space-y-3">
-                {recentCases.map((item) => {
-                  const pred = item.latest_prediction;
-                  return (
-                    <div
-                      key={item.id}
-                      onClick={() => navigate(`/cases/${item.id}`)}
-                      className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-800/80 hover:border-slate-700 transition-colors cursor-pointer flex items-center justify-between gap-3"
-                    >
-                      <div className="space-y-0.5">
-                        <div className="flex items-center space-x-2">
-                          <span className="font-mono font-bold text-xs text-blue-400">
-                            #{item.ddl_case_id || item.id.substring(0, 8)}
-                          </span>
-                          <span className="text-xs font-semibold text-slate-200 capitalize">
-                            {item.type_name}
-                          </span>
-                        </div>
-                        <p className="text-[11px] text-slate-400">
-                          {item.court_str || `Court #${item.court_no}`} • {formatDate(item.created_at)}
-                        </p>
-                      </div>
-
-                      {pred ? (
-                        <RiskBadge band={pred.risk_band} score={pred.risk_score} showScore size="sm" />
-                      ) : (
-                        <span className="text-xs text-slate-500">Pending</span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+            <Link to="/cases" className="font-label-md text-label-md text-secondary hover:text-primary transition-colors flex items-center gap-1">
+              View All <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <div className="pt-4 border-t border-slate-800">
+          {recentCases.length === 0 ? (
+            <div className="flex-1 flex items-center justify-center p-8">
+              <p className="font-body-md text-body-md text-on-surface-variant text-center">No recent case predictions registered yet.</p>
+            </div>
+          ) : (
+            <div className="space-y-3 flex-1 overflow-y-auto">
+              {recentCases.map((item) => {
+                const pred = item.latest_prediction;
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => navigate(`/cases/${item.id}`)}
+                    className="p-3.5 rounded bg-surface-container-lowest border border-outline-variant/50 hover:border-outline hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                  >
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-data-mono text-data-mono text-primary font-bold">
+                          #{item.ddl_case_id || item.id.substring(0, 8)}
+                        </span>
+                        <span className="font-label-md text-label-md text-on-surface capitalize">
+                          {item.type_name}
+                        </span>
+                      </div>
+                      <p className="font-label-sm text-label-sm text-on-surface-variant">
+                        {item.court_str || `Court #${item.court_no}`} • {formatDate(item.created_at)}
+                      </p>
+                    </div>
+
+                    {pred ? (
+                      <RiskBadge band={pred.risk_band} score={pred.risk_score} showScore size="sm" />
+                    ) : (
+                      <span className="font-label-sm text-label-sm text-outline">Pending</span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          <div className="pt-4 mt-4 border-t border-outline-variant">
             <Link
               to="/analytics"
-              className="text-xs text-slate-400 hover:text-slate-200 flex items-center justify-center space-x-1 py-1"
+              className="font-label-md text-label-md text-secondary hover:text-primary transition-colors flex items-center justify-center gap-1 py-1"
             >
               <span>Explore Court & Case-Type Analytics</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };

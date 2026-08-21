@@ -19,25 +19,21 @@ export const StatCard: React.FC<StatCardProps> = ({
   subtitle,
   icon: Icon,
   trend,
-  accentColor = 'text-blue-400',
+  accentColor = 'text-primary',
 }) => {
   return (
-    <div className="card-glass p-5 flex flex-col justify-between hover:border-slate-700 transition-colors">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-wider text-slate-400">{title}</p>
-          <h3 className="text-2xl font-bold text-slate-100 mt-2 font-mono">{value}</h3>
-        </div>
-        <div className={`p-2.5 rounded-lg bg-slate-800/80 ${accentColor}`}>
-          <Icon className="w-5 h-5" />
-        </div>
+    <div className="bg-surface-container-lowest border border-outline-variant/50 p-4 rounded-lg shadow-sm flex flex-col hover:border-outline transition-colors">
+      <div className="text-on-surface-variant font-label-md text-label-md mb-2 flex justify-between items-center uppercase tracking-wider">
+        <span>{title}</span>
+        <Icon className={`w-5 h-5 ${accentColor}`} />
       </div>
+      <div className={`font-headline-md text-headline-md mb-1 ${accentColor}`}>{value}</div>
       {(subtitle || trend) && (
-        <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+        <div className="text-surface-tint font-label-sm text-label-sm flex items-center gap-1 mt-1">
           {subtitle && <span>{subtitle}</span>}
           {trend && (
-            <span className={trend.positive ? 'text-emerald-400 font-medium' : 'text-rose-400 font-medium'}>
-              {trend.value}
+            <span className={trend.positive ? 'text-risk-low' : 'text-risk-veryHigh'}>
+              • {trend.value}
             </span>
           )}
         </div>

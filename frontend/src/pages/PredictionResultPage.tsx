@@ -86,23 +86,23 @@ export const PredictionResultPage: React.FC = () => {
   const shapItems = explanation?.top_contributors || prediction.shap_explanations || [];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-stack-md">
       {/* Top Action Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <button
           onClick={() => navigate('/prediction/new')}
-          className="inline-flex items-center space-x-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-850 hover:bg-slate-800 px-3.5 py-2 rounded-lg border border-slate-700/60 transition-colors"
+          className="inline-flex items-center gap-2 font-label-md text-label-md text-secondary hover:text-primary bg-surface-container-low hover:bg-surface-container-high px-4 py-2 rounded-md transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>New Prediction</span>
         </button>
 
-        <div className="flex items-center space-x-3 text-xs">
+        <div className="flex items-center gap-3">
           <Link
             to="/cases"
-            className="inline-flex items-center space-x-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 px-3.5 py-2 rounded-lg transition-colors font-medium"
+            className="inline-flex items-center gap-1.5 bg-surface-container-high hover:bg-outline-variant text-on-surface px-4 py-2 rounded-md transition-colors font-label-md text-label-md"
           >
-            <FolderGit2 className="w-3.5 h-3.5" />
+            <FolderGit2 className="w-4 h-4" />
             <span>Cases Repository</span>
           </Link>
         </div>

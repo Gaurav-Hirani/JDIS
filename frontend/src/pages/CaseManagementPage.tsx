@@ -65,14 +65,14 @@ export const CaseManagementPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Page Header */}
-      <div className="card-glass p-6 border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-center space-x-3">
-          <div className="p-2.5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30">
+      <div className="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-primary-container text-on-primary-container rounded-lg shrink-0">
             <FolderGit2 className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-slate-100">Case Records Repository</h1>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <h1 className="font-headline-sm text-headline-sm text-primary">Case Records Repository</h1>
+            <p className="font-body-md text-body-md text-on-surface-variant mt-1">
               Browse, filter, and inspect registered case filings and historical JDIS risk evaluations
             </p>
           </div>
@@ -80,7 +80,7 @@ export const CaseManagementPage: React.FC = () => {
 
         <Link
           to="/prediction/new"
-          className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors shadow-md shrink-0"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2.5 rounded-md transition-colors shadow-sm shrink-0"
         >
           <FilePlus2 className="w-4 h-4" />
           <span>New Filing Record</span>
