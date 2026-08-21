@@ -78,32 +78,45 @@ export const RiskScoreGauge: React.FC<RiskScoreGaugeProps> = ({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-slate-950/60 border border-slate-850">
-          <div>
-            <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
-              Predicted Delay Probability
-            </span>
-            <span className={`text-2xl font-bold font-mono ${theme.textClass}`}>
-              {formatProbability(calibratedProbability)}
-            </span>
-            <span className="text-[10px] text-slate-500 block mt-0.5">Calibrated (&gt;24 Month Threshold)</span>
-          </div>
+          {rawProbability !== undefined && (
+            <div>
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                Raw Model Probability
+              </span>
+              <span className="text-xl font-bold font-mono text-slate-300">
+                {formatProbability(rawProbability)}
+              </span>
+              <span className="text-[10px] text-slate-500 block mt-0.5">Direct XGBoost output</span>
+            </div>
+          )}
 
           <div>
             <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
-              Model Version
+              Calibrated Delay Probability
             </span>
-            <span className="text-base font-bold font-mono text-slate-200 block mt-1">{modelVersion}</span>
-            {rawProbability !== undefined && (
-              <span className="text-[10px] text-slate-500 block">Raw Probability: {formatProbability(rawProbability)}</span>
-            )}
+            <span className={`text-xl font-bold font-mono ${theme.textClass}`}>
+              {formatProbability(calibratedProbability)}
+            </span>
+            <span className="text-[10px] text-slate-500 block mt-0.5">Isotonic mapped (&gt;24 mo)</span>
           </div>
         </div>
 
-        <div className="flex items-start space-x-2 text-[11px] text-slate-400 bg-slate-800/40 p-2.5 rounded-lg border border-slate-800">
-          <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-          <span>
-            The JDIS Risk Score is calculated deterministically as <code className="font-mono text-blue-300">floor(calibrated_probability * 100)</code> per research specifications.
-          </span>
+        <div className="space-y-2">
+          <p className="text-[11px] text-slate-400 leading-relaxed px-1">
+            Raw probability is the direct XGBoost model output. Calibrated probability is the probability after isotonic calibration and is used for the JDIS Risk Score.
+          </p>
+
+          <div className="flex items-start space-x-2 text-[11px] text-slate-400 bg-slate-800/40 p-2.5 rounded-lg border border-slate-800">
+            <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+            <div className="space-y-1.5">
+              <p>
+                The JDIS Risk Score is calculated deterministically as <code className="font-mono text-blue-300">floor(calibrated_probability * 100)</code> per research specifications.
+              </p>
+              <p>
+                Different raw model probabilities may map to the same calibrated probability because the production calibrator uses a monotonic stepwise mapping.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
