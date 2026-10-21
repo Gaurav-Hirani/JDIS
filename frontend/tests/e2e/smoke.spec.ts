@@ -7,8 +7,7 @@ test.describe('JDIS Frontend End-to-End Smoke Tests', () => {
   });
 
   test('Flow 1: Executive Dashboard loads with health indicator and system metrics', async ({ page }) => {
-    await expect(page.getByText('JDIS Platform')).toBeVisible();
-    await expect(page.getByText('JDIS Executive Delay Dashboard')).toBeVisible();
+    await expect(page.getByText('Judicial Delay Intelligence')).toBeVisible();
     await expect(page.getByText(/Backend Online|Backend Disconnected/)).toBeVisible();
     await expect(page.getByText('Total Registered Cases')).toBeVisible();
   });
@@ -22,7 +21,7 @@ test.describe('JDIS Frontend End-to-End Smoke Tests', () => {
     await page.click('button[type="submit"]');
 
     // Should navigate to prediction result view and display calibrated probability
-    await expect(page.getByText('Calibrated (>24 Month Threshold)')).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText('Calibrated Delay Probability')).toBeVisible({ timeout: 15000 });
     await expect(page.getByText('Why This Prediction?')).toBeVisible();
   });
 

@@ -111,7 +111,11 @@ class CaseService:
 
     @staticmethod
     def update_case(case_id: str, case_in: CaseUpdate, db: Session) -> CaseResponse:
-        """Updates case details and re-predicts if key attributes changed."""
+        """Updates the editable metadata fields on an existing case.
+
+        Does not re-run the ML pipeline: predictions are immutable once written,
+        so a case edit never invalidates or regenerates its stored risk score.
+        """
         case_obj = db.query(Case).filter(Case.id == case_id).first()
         if not case_obj:
             raise CaseNotFoundException(case_id)

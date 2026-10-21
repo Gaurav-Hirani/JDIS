@@ -26,7 +26,7 @@ export const NewPredictionPage: React.FC = () => {
         try {
           const caseRecord = await createCaseRecord({
             ...values,
-            ddl_case_id: `case_${Math.floor(100000 + Math.random() * 900000)}`,
+            ddl_case_id: `case_${crypto.randomUUID()}`,
           });
           caseId = caseRecord.id;
         } catch (saveErr) {

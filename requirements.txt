@@ -19,6 +19,13 @@ sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.0
 alembic>=1.11.0
 
+# Research Pipeline & Experiment Tooling
+# Required by src/ml/train_advanced_models.py (LightGBM comparison arm) and by the
+# plotting helpers in src/ml/experiment_utils.py and src/xai/*.py
+lightgbm>=4.0.0,<5
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
 # Testing
 pytest>=7.0.0
 httpx>=0.24.0

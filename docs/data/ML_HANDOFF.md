@@ -1,5 +1,28 @@
 # JDIS ML-Ready Dataset Handoff Specification & Protocol
 
+> ## ⚠️ SUPERSEDED — READ `FINAL_ML_HANDOFF_TO_BACKEND.md` INSTEAD
+>
+> This document describes the **original 2010–2016 / 2017 / 2018 three-cohort split**,
+> which is no longer the protocol used by the shipped model.
+>
+> The released configuration (**Config D**) uses the narrow, censoring-aware
+> timeline **Train 2010–2014 / Validation 2015 / Test 2016**, and ships only 29
+> filing-stage features — not the 87-column Dataset A described here. Sections 3
+> and 6 of this file (temporal split code blocks) in particular are stale and
+> must not be copied.
+>
+> Authoritative references:
+> - `docs/data/FINAL_ML_HANDOFF_TO_BACKEND.md` — backend integration contract
+> - `docs/data/FINAL_MODEL_FEATURE_SPECIFICATION.md` — the 29-feature Config D
+> - `research/REPRODUCIBILITY.md` — exact pipeline commands
+>
+> Retained below for historical record only.
+>
+
+---
+
+## (Superseded original content)
+
 **From**: Tanmay — Data Engineer & Data Architect  
 **To**: Gaurav — AI & Research Lead  
 **Cc**: Namdeo (Backend Lead), Shukla (Frontend Lead)  

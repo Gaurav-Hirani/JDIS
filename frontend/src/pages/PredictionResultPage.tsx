@@ -120,7 +120,7 @@ export const PredictionResultPage: React.FC = () => {
 
       {/* 2. Predicted Duration Card */}
       <DurationCard
-        predictedDurationDays={duration?.predicted_duration_days || 540}
+        predictedDurationDays={duration?.predicted_duration_days}
         limitationsFlag={duration?.limitations_flag}
       />
 

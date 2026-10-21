@@ -1,0 +1,73 @@
+# The Dockerfile COPYs only: requirements.txt, backend/, alembic/,
+# alembic.ini, models/, research/experiments/.
+# Everything else listed here is excluded from the build context to keep
+# the image small and avoid accidentally packaging secrets or data.
+
+# --- Secrets & local state ---
+.env
+jdis_local.db
+*.db
+*.sqlite
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Source control & CI ---
+.git/
+.gitignore
+.github/
+.claude/
+.vscode/
+.idea/
+.DS_Store
+
+# --- Python artifacts ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Raw data: large extracts, never needed at runtime ---
+data/
+
+# --- ML pipeline source: not used by the deployed backend ---
+src/
+
+# --- Experiment configs ---
+configs/
+
+# --- Research outputs: large figures, CSVs, PDFs, literature ---
+research/figures/
+research/results/
+research/literature/
+research/paper/
+research/tables/
+research/REPRODUCIBILITY.md
+research/FINAL_*
+research/INVALIDATED_RESULTS.md
+
+# --- Tests ---
+tests/
+test-results/
+
+# --- Frontend (separate deployment, not served from this image) ---
+frontend/
+
+# --- Notebooks ---
+notebooks/
+
+# --- Deployment tooling ---
+deployment/
+docker-compose.yml
+
+# --- Docs & meta (not needed in the image) ---
+docs/
+README.md
+LICENSE
+Makefile
+pyproject.toml
+scripts/

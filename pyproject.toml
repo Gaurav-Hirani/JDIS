@@ -1,0 +1,19 @@
+[project]
+name = "jdis"
+version = "1.0.0"
+description = "Judicial Delay Intelligence System — an explainable, censoring-aware machine learning framework for judicial case delay prediction in Indian lower courts."
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+# Add the repository root to sys.path so that both `pytest` and `python -m pytest`
+# can resolve top-level packages such as `src.*` and `backend.*`.
+pythonpath = ["."]
+testpaths = ["tests", "backend/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+filterwarnings = [
+    # XGBoost emits this whenever a pickled booster is loaded from a different
+    # minor version; the frozen artifacts are intentionally pinned, so it is noise.
+    "ignore:.*If you are loading a serialized model.*:UserWarning",
+]

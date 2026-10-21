@@ -178,10 +178,10 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, isSubm
           <div>
             <label className={labelClass}>Case Category</label>
             <select {...register('case_category')} className={inputClass}>
-              <option value="criminal">Criminal</option>
-              <option value="civil">Civil</option>
-              <option value="commercial">Commercial</option>
-              <option value="other">Other</option>
+              <option value="High-Confidence Criminal">High-Confidence Criminal</option>
+              <option value="High-Confidence Civil">High-Confidence Civil</option>
+              <option value="Ambiguous/Mixed">Ambiguous/Mixed</option>
+              <option value="Other/Unknown/Unclassified">Other/Unknown/Unclassified</option>
             </select>
           </div>
 
@@ -221,9 +221,9 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, isSubm
           <div>
             <label className={labelClass}>Bailable IPC Flag</label>
             <select {...register('bailable_ipc_flag')} className={inputClass}>
-              <option value="bailable">Bailable</option>
-              <option value="non-bailable">Non-Bailable</option>
-              <option value="unknown">Unknown / N/A</option>
+              <option value="1">Bailable (1)</option>
+              <option value="0">Non-Bailable (0)</option>
+              <option value="-1">Unknown / N/A (-1)</option>
             </select>
           </div>
 
@@ -283,15 +283,24 @@ export const PredictionForm: React.FC<PredictionFormProps> = ({ onSubmit, isSubm
 
           <div>
             <label className={labelClass}>Judge Position</label>
-            <input type="text" {...register('judge_position_clean')} className={inputClass} />
+            <select {...register('judge_position_clean')} className={inputClass}>
+              <option value="judicial_magistrate">Judicial Magistrate</option>
+              <option value="civil_judge_junior">Civil Judge (Junior)</option>
+              <option value="civil_judge_senior">Civil Judge (Senior)</option>
+              <option value="civil_court">Civil Court</option>
+              <option value="district_and_sessions">District & Sessions</option>
+              <option value="chief_judicial_magistrate">Chief Judicial Magistrate</option>
+              <option value="addl_district_sessions">Addl. District & Sessions</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           <div>
             <label className={labelClass}>Judge Gender</label>
             <select {...register('judge_gender')} className={inputClass}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="unknown">Unknown</option>
+              <option value="0 nonfemale">Non-Female (0)</option>
+              <option value="1 female">Female (1)</option>
+              <option value="UNKNOWN">Unknown</option>
             </select>
           </div>
 
